@@ -1,0 +1,6 @@
+@Sbleaderboards.Api_HostAddress = http://localhost:5238
+
+GET {{Sbleaderboards.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

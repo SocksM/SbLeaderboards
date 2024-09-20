@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{624964D9-CCFD-48D6-99CF-5230B6E15478}|SbLeaderboards.Presentation\\sbleaderboards.presentation.esproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.presentation\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{624964D9-CCFD-48D6-99CF-5230B6E15478}|SbLeaderboards.Presentation\\sbleaderboards.presentation.esproj|solutionrelative:sbleaderboards.presentation\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{5D3FDE63-DACB-4358-BF86-36CC682E1656}|SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.dal\\context\\sbleaderboardscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3FDE63-DACB-4358-BF86-36CC682E1656}|SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj|solutionrelative:sbleaderboards.api.dal\\context\\sbleaderboardscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3FDE63-DACB-4358-BF86-36CC682E1656}|SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.dal\\configuration\\appconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3FDE63-DACB-4358-BF86-36CC682E1656}|SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj|solutionrelative:sbleaderboards.api.dal\\configuration\\appconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3FDE63-DACB-4358-BF86-36CC682E1656}|SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.dal\\sbleaderboards.api.dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5D3FDE63-DACB-4358-BF86-36CC682E1656}|SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj|solutionrelative:sbleaderboards.api.dal\\sbleaderboards.api.dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\Sbleaderboards.Api.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\Sbleaderboards.Api.csproj|solutionrelative:sbleaderboards.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\Sbleaderboards.Api.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\Sbleaderboards.Api.csproj|solutionrelative:sbleaderboards.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,23 +30,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 8,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppConfiguration.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\Configuration\\AppConfiguration.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Api.DAL\\Configuration\\AppConfiguration.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\Configuration\\AppConfiguration.cs",
+              "RelativeToolTip": "SbLeaderboards.Api.DAL\\Configuration\\AppConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T11:29:58.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SbLeaderboards.Api.DAL",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj",
+              "RelativeDocumentMoniker": "SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj",
+              "RelativeToolTip": "SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-20T11:28:18.044Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Sbleaderboards.Api\\Program.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\Program.cs",
+              "RelativeToolTip": "Sbleaderboards.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T11:17:35.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Sbleaderboards.Api\\appsettings.json",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\appsettings.json",
+              "RelativeToolTip": "Sbleaderboards.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-20T11:12:05.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "App.jsx",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\sbleaderboards.presentation\\src\\App.jsx",
-              "RelativeDocumentMoniker": "sbleaderboards.presentation\\src\\App.jsx",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\sbleaderboards.presentation\\src\\App.jsx",
-              "RelativeToolTip": "sbleaderboards.presentation\\src\\App.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-09-10T12:23:59.852Z",
+              "Title": "SbLeaderBoardsContext.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\Context\\SbLeaderBoardsContext.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Api.DAL\\Context\\SbLeaderBoardsContext.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\Context\\SbLeaderBoardsContext.cs",
+              "RelativeToolTip": "SbLeaderboards.Api.DAL\\Context\\SbLeaderBoardsContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T11:07:54.26Z",
               "EditorCaption": ""
             }
           ]

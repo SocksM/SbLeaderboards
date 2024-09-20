@@ -1,4 +1,6 @@
 
+using Microsoft.EntityFrameworkCore;
+
 namespace Sbleaderboards.Api
 {
 	public class Program

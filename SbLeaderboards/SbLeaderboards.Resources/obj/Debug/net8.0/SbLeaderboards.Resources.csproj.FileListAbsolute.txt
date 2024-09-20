@@ -1,0 +1,12 @@
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\bin\Debug\net8.0\SbLeaderboards.Resources.deps.json
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\bin\Debug\net8.0\SbLeaderboards.Resources.dll
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\bin\Debug\net8.0\SbLeaderboards.Resources.pdb
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\SbLeaderboards.Resources.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\SbLeaderboards.Resources.AssemblyInfoInputs.cache
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\SbLeaderboards.Resources.AssemblyInfo.cs
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\SbLeaderboards.Resources.csproj.CoreCompileInputs.cache
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\SbLeaderboards.Resources.sourcelink.json
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\SbLeaderboards.Resources.dll
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\refint\SbLeaderboards.Resources.dll
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\SbLeaderboards.Resources.pdb
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\ref\SbLeaderboards.Resources.dll

@@ -10,3 +10,7 @@ C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Api.BLL\obj\Debug\net8.0\
 C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Api.BLL\obj\Debug\net8.0\refint\SbLeaderboards.Api.BLL.dll
 C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Api.BLL\obj\Debug\net8.0\SbLeaderboards.Api.BLL.pdb
 C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Api.BLL\obj\Debug\net8.0\ref\SbLeaderboards.Api.BLL.dll
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Api.BLL\bin\Debug\net8.0\SbLeaderboards.Resources.dll
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Api.BLL\bin\Debug\net8.0\SbLeaderboards.Resources.pdb
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Api.BLL\obj\Debug\net8.0\SbLeaderboards.Api.BLL.csproj.AssemblyReference.cache
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Api.BLL\obj\Debug\net8.0\SbLeader.91ED6422.Up2Date

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SbTournaments.Api.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcdb37574e5a4c67edf548c6cf06e7578bcb0c5a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9abb82ae1495df5695ade6bf74a5bad5b316ed8")]
 [assembly: System.Reflection.AssemblyProductAttribute("SbTournaments.Api.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SbTournaments.Api.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

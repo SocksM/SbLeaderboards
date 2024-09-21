@@ -1,4 +1,4 @@
-namespace Sbleaderboards.Api
+namespace SbLeaderboards.Api
 {
 	public class WeatherForecast
 	{

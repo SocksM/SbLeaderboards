@@ -1526,6 +1526,10 @@
       "SbLeaderboards.Resources/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8"
+        },
         "compile": {
           "bin/placeholder/SbLeaderboards.Resources.dll": {}
         },
@@ -4174,7 +4178,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nieks\\.nuget\\packages\\": {}
+    "C:\\Users\\socks\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -4182,11 +4186,11 @@
       "projectUniqueName": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj",
       "projectName": "SbLeaderboards.Api.DAL",
       "projectPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj",
-      "packagesPath": "C:\\Users\\nieks\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\socks\\.nuget\\packages\\",
       "outputPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nieks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\socks\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

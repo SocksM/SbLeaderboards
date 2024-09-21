@@ -2,6 +2,7 @@
 {
 	public class Player : Entity
 	{
+		public string Name { get; set; }
         public Guid McUuid { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "TkV0ujU3PuzpxaSW+y8pJN1OgsEStlBdUiQNZlwp3TE=",
-  "Source": "Sbleaderboards.Api",
-  "BasePath": "_content/Sbleaderboards.Api",
+  "Hash": "CmXx7lzHbqbMKUeEi4ahtLsj4mR56N4qNlQXEmps7HQ=",
+  "Source": "SbLeaderboards.Api",
+  "BasePath": "_content/SbLeaderboards.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

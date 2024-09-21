@@ -24,7 +24,6 @@ C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\obj\Debug\net8.0\stat
 C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Sbleaderboards.Api.props
 C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\obj\Debug\net8.0\scopedcss\bundle\Sbleaderboards.Api.styles.css
-C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\obj\Debug\net8.0\Sbleader.910AB514.Up2Date
 C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\obj\Debug\net8.0\Sbleaderboards.Api.dll
 C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\obj\Debug\net8.0\refint\Sbleaderboards.Api.dll
 C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\obj\Debug\net8.0\Sbleaderboards.Api.pdb
@@ -141,3 +140,4 @@ C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\bin\Debug\net8.0\ru\M
 C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\obj\Debug\net8.0\SbLeader.C9B42EF4.Up2Date

@@ -10,3 +10,6 @@ C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.
 C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\refint\SbLeaderboards.Resources.dll
 C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\SbLeaderboards.Resources.pdb
 C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\ref\SbLeaderboards.Resources.dll
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\bin\Debug\net8.0\SbLeaderboards.Resources.runtimeconfig.json
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\SbLeaderboards.Resources.csproj.AssemblyReference.cache
+C:\Github\SbLeaderboards\SbLeaderboards\SbLeaderboards.Resources\obj\Debug\net8.0\SbLeaderboards.Resources.genruntimeconfig.cache

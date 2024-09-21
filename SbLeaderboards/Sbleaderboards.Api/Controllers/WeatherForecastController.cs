@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Sbleaderboards.Api.Controllers
+namespace SbLeaderboards.Api.Controllers
 {
 	[ApiController]
 	[Route("[controller]")]

@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api\\Sbleaderboards.Api.csproj": {}
+    "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\SbLeaderboards.Api.csproj": {}
   },
   "projects": {
     "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj": {
@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj",
         "projectName": "SbLeaderboards.Api.BLL",
         "projectPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj",
-        "packagesPath": "C:\\Users\\nieks\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\socks\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nieks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\socks\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,7 +28,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj": {
+                "projectPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -71,11 +75,11 @@
         "projectUniqueName": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj",
         "projectName": "SbLeaderboards.Api.DAL",
         "projectPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj",
-        "packagesPath": "C:\\Users\\nieks\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\socks\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nieks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\socks\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -156,17 +160,17 @@
         }
       }
     },
-    "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api\\Sbleaderboards.Api.csproj": {
+    "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\SbLeaderboards.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api\\Sbleaderboards.Api.csproj",
-        "projectName": "Sbleaderboards.Api",
-        "projectPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api\\Sbleaderboards.Api.csproj",
-        "packagesPath": "C:\\Users\\nieks\\.nuget\\packages\\",
-        "outputPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api\\obj\\",
+        "projectUniqueName": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\SbLeaderboards.Api.csproj",
+        "projectName": "SbLeaderboards.Api",
+        "projectPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\SbLeaderboards.Api.csproj",
+        "packagesPath": "C:\\Users\\socks\\.nuget\\packages\\",
+        "outputPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nieks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\socks\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -258,11 +262,11 @@
         "projectUniqueName": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj",
         "projectName": "SbLeaderboards.Resources",
         "projectPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj",
-        "packagesPath": "C:\\Users\\nieks\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\socks\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nieks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\socks\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -293,6 +297,28 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

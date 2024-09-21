@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\build\Sbleaderboards.Api.props" />
+  <Import Project="..\build\SbLeaderboards.Api.props" />
 </Project>

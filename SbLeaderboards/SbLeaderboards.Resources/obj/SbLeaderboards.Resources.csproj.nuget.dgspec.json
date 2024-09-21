@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj",
         "projectName": "SbLeaderboards.Resources",
         "projectPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj",
-        "packagesPath": "C:\\Users\\nieks\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\socks\\.nuget\\packages\\",
         "outputPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nieks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\socks\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,6 +45,28 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

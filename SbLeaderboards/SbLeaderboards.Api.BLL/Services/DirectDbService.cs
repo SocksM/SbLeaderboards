@@ -3,11 +3,11 @@ using SbLeaderboards.Resources.DTOs;
 
 namespace SbLeaderboards.Api.BLL.Services
 {
-	public class Service<E> where E : Entity
+	public class DirectDbService<E> where E : Entity
 	{
-        private readonly IRepository<E> _repository;
+        private readonly IDirectDbRepository<E> _repository;
 
-        public Service(IRepository<E> repository)
+        public DirectDbService(IDirectDbRepository<E> repository)
         {
             _repository = repository;
         }
@@ -30,6 +30,11 @@ namespace SbLeaderboards.Api.BLL.Services
         public E GetById(int id)
         {
             return _repository.GetById(id);
+        }
+
+        public List<E> GetWhere(Func<E, bool> where)
+        {
+            return _repository.GetWhere(where);
         }
 
         public void Update(E entity)

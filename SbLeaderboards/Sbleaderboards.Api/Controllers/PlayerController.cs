@@ -3,6 +3,7 @@ using SbLeaderboards.Api.BLL.Services;
 using SbLeaderboards.Api.DAL.Configuration;
 using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Api.DAL.Repositories;
+using SbLeaderboards.Resources.DTOs;
 using SbLeaderboards.Resources.Enums;
 
 namespace SbLeaderboards.Api.Controllers
@@ -78,7 +79,11 @@ namespace SbLeaderboards.Api.Controllers
 		{
 			try
 			{
-				throw new NotImplementedException();
+				List<Stats> stats = _statsService.GetHistory(id, profileType, fromDateTime, toDateTime);
+
+				if (stats == null || !stats.Any()) return NotFound();
+
+				return Ok(stats);
 			}
 			catch (Exception)
 			{
@@ -88,11 +93,17 @@ namespace SbLeaderboards.Api.Controllers
 
 
 		[HttpGet("Mc{mcUuid}/History")]
-		public IActionResult GetHistory(Guid mcUuid)
+		public IActionResult GetHistory(Guid mcUuid, ProfileType? profileType = null, DateTime? fromDateTime = null, DateTime? toDateTime = null)
 		{
 			try
 			{
-				throw new NotImplementedException();
+				Player player = _playerService.GetByMcUuid(mcUuid);
+
+				List<Stats> stats = _statsService.GetHistory(player.Id, profileType, fromDateTime, toDateTime);
+
+				if (stats == null || !stats.Any()) return NotFound();
+
+				return Ok(stats);
 			}
 			catch (Exception)
 			{
@@ -101,4 +112,3 @@ namespace SbLeaderboards.Api.Controllers
 		}
 	}
 }
-

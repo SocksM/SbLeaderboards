@@ -2,17 +2,15 @@
 using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Resources.Interfaces.IRepository;
 using SbLeaderboards.Resources.DTOs;
-using Microsoft.Extensions.Configuration;
-using SbLeaderboards.Api.DAL.Configuration;
 
 namespace SbLeaderboards.Presentation.DAL.Repositories
 {
-	public class Repository<E> : IRepository<E> where E : Entity
+	public class DirectDbRepository<E> : IDirectDbRepository<E> where E : Entity
 	{
 		private SbLeaderboardsContext _context;
 		protected DbSet<E> _dbSet;
 
-		public Repository(SbLeaderboardsContext context)
+		public DirectDbRepository(SbLeaderboardsContext context)
 		{
 			_context = context;
 			_dbSet = context.Set<E>();
@@ -38,6 +36,11 @@ namespace SbLeaderboards.Presentation.DAL.Repositories
 		public E GetById(int id)
 		{
 			return _dbSet.FirstOrDefault(e => e.Id == id);
+		}
+
+		public List<E> GetWhere(Func<E, bool> where)
+		{
+			return _dbSet.Where(where).ToList();
 		}
 
 		public void Update(E entity)

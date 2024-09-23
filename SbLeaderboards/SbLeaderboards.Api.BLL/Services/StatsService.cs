@@ -4,7 +4,7 @@ using SbLeaderboards.Resources.Enums;
 
 namespace SbLeaderboards.Api.BLL.Services
 {
-	public class StatsService : Service<Stats>
+	public class StatsService : DirectDbService<Stats>
 	{
 		private readonly IStatsRepository _statsRepository;
 		public StatsService(IStatsRepository statsRepository) : base(statsRepository)
@@ -17,9 +17,14 @@ namespace SbLeaderboards.Api.BLL.Services
 			return _statsRepository.GetByPlayerId(playerId);
 		}
 
-		public List<Stats> GetByPlayerIdAndProfileType(int playerId, ProfileType profileType)
+		public List<Stats> GetHistory(int playerId, ProfileType? profileType = null, DateTime? fromDateTime = null, DateTime? toDateTime = null)
 		{
-			return _statsRepository.GetByPlayerIdAndProfileType(playerId, profileType);
+			return _statsRepository.GetWhere(
+				s => s.PlayerId == playerId &&
+				(profileType == null || s.ProfileType == profileType) &&
+				(fromDateTime == null || s.Timestamp >= fromDateTime) &&
+				(toDateTime == null || s.Timestamp <= toDateTime))
+				.ToList();
 		}
 	}
 }

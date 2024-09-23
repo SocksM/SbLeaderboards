@@ -141,3 +141,4 @@ C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\bin\Debug\net8.0\tr\M
 C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\obj\Debug\net8.0\SbLeader.C9B42EF4.Up2Date
+C:\Github\SbLeaderboards\SbLeaderboards\Sbleaderboards.Api\bin\Debug\net8.0\Newtonsoft.Json.dll

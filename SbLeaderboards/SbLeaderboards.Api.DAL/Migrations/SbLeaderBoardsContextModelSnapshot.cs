@@ -22,7 +22,7 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SbLeaderboards.Resources.Models.Player", b =>
+            modelBuilder.Entity("SbLeaderboards.Resources.DTOs.Player", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -37,12 +37,15 @@ namespace SbLeaderboards.Api.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("lastNameCheck")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Players", (string)null);
+                    b.ToTable("Players");
                 });
 
-            modelBuilder.Entity("SbLeaderboards.Resources.Models.Stats", b =>
+            modelBuilder.Entity("SbLeaderboards.Resources.DTOs.Stats", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -115,23 +118,7 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PlayerId");
-
-                    b.ToTable("Stats", (string)null);
-                });
-
-            modelBuilder.Entity("SbLeaderboards.Resources.Models.Stats", b =>
-                {
-                    b.HasOne("SbLeaderboards.Resources.Models.Player", null)
-                        .WithMany("StatList")
-                        .HasForeignKey("PlayerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("SbLeaderboards.Resources.Models.Player", b =>
-                {
-                    b.Navigation("StatList");
+                    b.ToTable("Stats");
                 });
 #pragma warning restore 612, 618
         }

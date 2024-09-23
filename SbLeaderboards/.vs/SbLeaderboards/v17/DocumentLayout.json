@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5D3FDE63-DACB-4358-BF86-36CC682E1656}|SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.dal\\repositories\\playerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D3FDE63-DACB-4358-BF86-36CC682E1656}|SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj|solutionrelative:sbleaderboards.api.dal\\repositories\\playerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.bll\\services\\leaderboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\leaderboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.bll\\services\\playerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\playerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.bll\\services\\statsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\statsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.resources\\interfaces\\irepository\\iplayerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|solutionrelative:sbleaderboards.resources\\interfaces\\irepository\\iplayerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.bll\\services\\directdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\directdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.bll\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,37 +22,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 18,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 18,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PlayerService.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\PlayerService.cs",
-              "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\PlayerService.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\PlayerService.cs",
-              "RelativeToolTip": "SbLeaderboards.Api.BLL\\Services\\PlayerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAARAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ProfileService.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\ProfileService.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\ProfileService.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\ProfileService.cs",
+              "RelativeToolTip": "SbLeaderboards.Api.BLL\\Services\\ProfileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T00:10:29.132Z",
+              "WhenOpened": "2024-09-23T11:10:25.57Z",
               "EditorCaption": ""
             }
           ]
@@ -68,40 +46,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PlayerRepository.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\Repositories\\PlayerRepository.cs",
-              "RelativeDocumentMoniker": "SbLeaderboards.Api.DAL\\Repositories\\PlayerRepository.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\Repositories\\PlayerRepository.cs",
-              "RelativeToolTip": "SbLeaderboards.Api.DAL\\Repositories\\PlayerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Title": "LeaderboardService.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\LeaderboardService.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\LeaderboardService.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\LeaderboardService.cs",
+              "RelativeToolTip": "SbLeaderboards.Api.BLL\\Services\\LeaderboardService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T00:10:10.615Z",
+              "WhenOpened": "2024-09-23T11:12:05.06Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DirectDbService.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\DirectDbService.cs",
-              "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\DirectDbService.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\DirectDbService.cs",
-              "RelativeToolTip": "SbLeaderboards.Api.BLL\\Services\\DirectDbService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T00:10:50.242Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IPlayerRepository.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Interfaces\\IRepository\\IPlayerRepository.cs",
-              "RelativeDocumentMoniker": "SbLeaderboards.Resources\\Interfaces\\IRepository\\IPlayerRepository.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Interfaces\\IRepository\\IPlayerRepository.cs",
-              "RelativeToolTip": "SbLeaderboards.Resources\\Interfaces\\IRepository\\IPlayerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "StatsService.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\StatsService.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\StatsService.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\StatsService.cs",
+              "RelativeToolTip": "SbLeaderboards.Api.BLL\\Services\\StatsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T00:46:20.764Z",
+              "WhenOpened": "2024-09-23T11:12:30.657Z",
               "EditorCaption": ""
             }
           ]

@@ -2,8 +2,7 @@
 {
 	public class Stats : Entity
 	{
-		public int PlayerId { get; set; }
-		public Enums.ProfileType ProfileType { get; set; }
+		public int ProfileId { get; set; }
 		public DateTime Timestamp { get; set; }
 		public int SkyblockExp { get; set; }
 		public int TamingExp { get; set; }

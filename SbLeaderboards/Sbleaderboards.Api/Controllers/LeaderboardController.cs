@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SbLeaderboards.Api.BLL.Services;
+using SbLeaderboards.Api.DAL.Repositories;
 using SbLeaderboards.Resources.DTOs;
 using SbLeaderboards.Resources.Enums;
 
@@ -12,7 +13,7 @@ namespace SbLeaderboards.Api.Controllers
 		private readonly LeaderboardService _leaderboardService;
         public LeaderboardController(IConfiguration configuration) : base()
         {
-			_leaderboardService = new LeaderboardService(configuration);
+			_leaderboardService = new LeaderboardService(new StatsService(new StatsRepository(new DAL.Context.SbLeaderboardsContext(new DAL.Configuration.AppConfiguration(configuration)))));
         }
 
         [HttpGet]

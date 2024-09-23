@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SbLeaderboards.Api.DAL\SbLeaderboards.Api.DAL.csproj" />
     <ProjectReference Include="..\SbLeaderboards.Resources\SbLeaderboards.Resources.csproj" />
   </ItemGroup>
 

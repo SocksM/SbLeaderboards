@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\leaderboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.bll\\services\\statsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\statsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.bll\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -22,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 18,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ProfileService.cs",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\ProfileService.cs",
               "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\ProfileService.cs",
@@ -36,13 +32,7 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-23T11:10:25.57Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 18,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -51,11 +41,17 @@
               "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\LeaderboardService.cs",
               "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\LeaderboardService.cs",
               "RelativeToolTip": "SbLeaderboards.Api.BLL\\Services\\LeaderboardService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAQwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-23T11:12:05.06Z",
               "EditorCaption": ""
-            },
+            }
+          ]
+        },
+        {
+          "DockedWidth": 18,
+          "SelectedChildIndex": -1,
+          "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -67,19 +63,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StatsService.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\StatsService.cs",
-              "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\StatsService.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\StatsService.cs",
-              "RelativeToolTip": "SbLeaderboards.Api.BLL\\Services\\StatsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T11:12:30.657Z",
-              "EditorCaption": ""
             }
           ]
         },

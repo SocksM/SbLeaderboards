@@ -6,8 +6,9 @@ namespace SbLeaderboards.Api.DAL.Context
 	public class SbLeaderboardsContext : DbContext
 	{
 		public DbSet<Resources.DTOs.Player> Players { get; set; }
+		public DbSet<Resources.DTOs.Profile> Profiles { get; set; }
 		public DbSet<Resources.DTOs.Stats> Stats { get; set; }
-
+		
 		private readonly string _connectionString;
 
         public SbLeaderboardsContext(AppConfiguration configuration)

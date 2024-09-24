@@ -18,7 +18,7 @@ namespace SbLeaderboards.Api.BLL.Services
 
 		public List<Stats> GetLeaderboard(StatType sort = StatType.SkyblockExp)
 		{
-			var leaderboards = new List<Stats>();
+			var leaderboard = new List<Stats>();
 			var allStats = _statsService.GetAll();
 
 			// Join with profiles to get PlayerId from Profile

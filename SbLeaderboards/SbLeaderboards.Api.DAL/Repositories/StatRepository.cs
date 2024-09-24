@@ -1,10 +1,7 @@
 ﻿using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Presentation.DAL.Repositories;
 using SbLeaderboards.Resources.Interfaces.IRepository;
-using SbLeaderboards.Resources.DTOs;
-using SbLeaderboards.Resources.Enums;
-using Microsoft.Extensions.Configuration;
-using SbLeaderboards.Api.DAL.Configuration;
+using SbLeaderboards.Resources.Models;
 
 namespace SbLeaderboards.Api.DAL.Repositories
 {
@@ -12,9 +9,9 @@ namespace SbLeaderboards.Api.DAL.Repositories
 	{
 		public StatsRepository(SbLeaderboardsContext context) : base(context) { }
 
-        public List<Stats> GetByPlayerId(int playerId)
+        public List<Stats> GetByProfileId(int profileId)
 		{
-			return _dbSet.Where(stats => stats.PlayerId == playerId).ToList();
+			return _dbSet.Where(stats => stats.ProfileId == profileId).ToList();
 		}
 	}
 }

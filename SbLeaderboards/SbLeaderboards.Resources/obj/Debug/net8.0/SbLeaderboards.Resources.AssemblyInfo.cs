@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SbLeaderboards.Resources")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6789746d5589a0eea0f0c7e404bc4c406c3db0c9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e12d257afad350c9a42fe89e9b4a79fd937d2fa4")]
 [assembly: System.Reflection.AssemblyProductAttribute("SbLeaderboards.Resources")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SbLeaderboards.Resources")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

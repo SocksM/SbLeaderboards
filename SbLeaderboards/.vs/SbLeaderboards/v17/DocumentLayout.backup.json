@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.bll\\services\\leaderboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\leaderboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.resources\\interfaces\\irepository\\iplayerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|solutionrelative:sbleaderboards.resources\\interfaces\\irepository\\iplayerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.bll\\services\\playerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\playerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.bll\\services\\directdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\directdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.bll\\services\\statsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\statsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.bll\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4C3EE5A-EF56-4E0F-8B8B-B863E8CF6D79}|SbLeaderboards.Api.BLL\\SbLeaderboards.Api.BLL.csproj|solutionrelative:sbleaderboards.api.bll\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3FDE63-DACB-4358-BF86-36CC682E1656}|SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.dal\\repositories\\profilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3FDE63-DACB-4358-BF86-36CC682E1656}|SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj|solutionrelative:sbleaderboards.api.dal\\repositories\\profilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D3FDE63-DACB-4358-BF86-36CC682E1656}|SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api.dal\\repositories\\directdbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D3FDE63-DACB-4358-BF86-36CC682E1656}|SbLeaderboards.Api.DAL\\SbLeaderboards.Api.DAL.csproj|solutionrelative:sbleaderboards.api.dal\\repositories\\directdbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,33 +37,98 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 18,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IPlayerRepository.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Interfaces\\IRepository\\IPlayerRepository.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Resources\\Interfaces\\IRepository\\IPlayerRepository.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Interfaces\\IRepository\\IPlayerRepository.cs",
+              "RelativeToolTip": "SbLeaderboards.Resources\\Interfaces\\IRepository\\IPlayerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T12:11:16.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DirectDbService.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\DirectDbService.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\DirectDbService.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\DirectDbService.cs",
+              "RelativeToolTip": "SbLeaderboards.Api.BLL\\Services\\DirectDbService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T12:10:13.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StatsService.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\StatsService.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\StatsService.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\StatsService.cs",
+              "RelativeToolTip": "SbLeaderboards.Api.BLL\\Services\\StatsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T12:10:07.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "PlayerService.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\PlayerService.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\PlayerService.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\PlayerService.cs",
+              "RelativeToolTip": "SbLeaderboards.Api.BLL\\Services\\PlayerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T12:10:05.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ProfileService.cs",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\ProfileService.cs",
               "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\ProfileService.cs",
               "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\ProfileService.cs",
               "RelativeToolTip": "SbLeaderboards.Api.BLL\\Services\\ProfileService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T11:10:25.57Z",
+              "WhenOpened": "2024-09-24T12:10:02.536Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LeaderboardService.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\LeaderboardService.cs",
-              "RelativeDocumentMoniker": "SbLeaderboards.Api.BLL\\Services\\LeaderboardService.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.BLL\\Services\\LeaderboardService.cs",
-              "RelativeToolTip": "SbLeaderboards.Api.BLL\\Services\\LeaderboardService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAQwCEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "DirectDbRepository.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\Repositories\\DirectDbRepository.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Api.DAL\\Repositories\\DirectDbRepository.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\Repositories\\DirectDbRepository.cs",
+              "RelativeToolTip": "SbLeaderboards.Api.DAL\\Repositories\\DirectDbRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T11:12:05.06Z",
+              "WhenOpened": "2024-09-24T12:09:18.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProfileRepository.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\Repositories\\ProfileRepository.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Api.DAL\\Repositories\\ProfileRepository.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\Repositories\\ProfileRepository.cs",
+              "RelativeToolTip": "SbLeaderboards.Api.DAL\\Repositories\\ProfileRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T12:09:09.664Z",
               "EditorCaption": ""
             }
           ]

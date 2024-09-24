@@ -11,9 +11,9 @@ namespace SbLeaderboards.Api.BLL.Services
 			_statsRepository = statsRepository;
 		}
 
-		public List<Stats> GetByPlayerId(int playerId)
+		public List<Stats> GetByProfileId(int playerId)
 		{
-			return _statsRepository.GetByPlayerId(playerId);
+			return _statsRepository.GetByProfileId(playerId);
 		}
 	}
 }

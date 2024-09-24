@@ -2,7 +2,7 @@
 {
 	public class Stats : Entity
 	{
-		public Guid ProfileId { get; set; }
+		public int ProfileId { get; set; }
 		public DateTime Timestamp { get; set; }
 		public int SkyblockExp { get; set; }
 		public int TamingExp { get; set; }
@@ -22,5 +22,31 @@
 		public int TankExp { get; set; }
 		public int BerserkerExp { get; set; }
 		public int MageExp { get; set; }
+
+		public Stats() { }
+
+		public Stats(DTOs.Stats stats) : base()
+		{
+			base.Id = stats.Id;
+			ProfileId = stats.ProfileId;
+			Timestamp = stats.Timestamp;
+			SkyblockExp = stats.SkyblockExp;
+			TamingExp = stats.TamingExp;
+			MiningExp = stats.MiningExp;
+			ForagingExp = stats.ForagingExp;
+			EnchantingExp = stats.EnchantingExp;
+			CarpentryExp = stats.CarpentryExp;
+			FarmingExp = stats.FarmingExp;
+			CombatExp = stats.CombatExp;
+			FishingExp = stats.FishingExp;
+			AlchemyExp = stats.AlchemyExp;
+			RunecraftingExp = stats.RunecraftingExp;
+			SocialExp = stats.SocialExp;
+			CatacombsExp = stats.CatacombsExp;
+			HealerExp = stats.HealerExp;
+			TankExp = stats.TankExp;
+			BerserkerExp = stats.BerserkerExp;
+			MageExp = stats.MageExp;
+		}
 	}
 }

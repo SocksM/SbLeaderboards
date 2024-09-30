@@ -5,6 +5,7 @@ using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Api.DAL.Repositories;
 using SbLeaderboards.Resources.Models;
 using SbLeaderboards.Resources.Enums;
+using SbLeaderboards.Api.DAL.ApiRepositories;
 
 namespace SbLeaderboards.Api.Controllers
 {
@@ -17,7 +18,7 @@ namespace SbLeaderboards.Api.Controllers
 
 		public PlayerController(IConfiguration configuration) : base()
 		{
-			_playerService = new PlayerService(new PlayerRepository(new SbLeaderboardsContext(new AppConfiguration(configuration))));
+			_playerService = new PlayerService(new PlayerRepository(new SbLeaderboardsContext(new AppConfiguration(configuration))), new MojangApiRepository());
 			_statsService = new StatsService(new StatsRepository(new SbLeaderboardsContext(new AppConfiguration(configuration))));
 		}
 

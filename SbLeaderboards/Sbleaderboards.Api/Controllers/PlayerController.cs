@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SbLeaderboards.Api.BLL.Services;
+using SbLeaderboards.Api.BLL.Services.DbServices;
 using SbLeaderboards.Api.DAL.Configuration;
 using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Api.DAL.Repositories;
-using SbLeaderboards.Resources.DTOs;
+using SbLeaderboards.Resources.Models;
 using SbLeaderboards.Resources.Enums;
 
 namespace SbLeaderboards.Api.Controllers
 {
-	[Route("api/[controller]")]
+    [Route("api/[controller]")]
 	[ApiController]
 	public class PlayerController : ControllerBase
 	{
@@ -77,38 +77,41 @@ namespace SbLeaderboards.Api.Controllers
 		[HttpGet("{id}/History")]
 		public IActionResult GetHistory(int id, ProfileType? profileType = null, DateTime? fromDateTime = null, DateTime? toDateTime = null)
 		{
-			try
-			{
-				List<Stats> stats = _statsService.GetHistory(id, profileType, fromDateTime, toDateTime);
+			throw new NotImplementedException();
 
-				if (stats == null || !stats.Any()) return NotFound();
+			//try
+			//{
+			//	List<Stats> stats = _statsService.GetHistory(id, profileType, fromDateTime, toDateTime);
 
-				return Ok(stats);
-			}
-			catch (Exception)
-			{
-				return Problem();
-			}
+			//	if (stats == null || !stats.Any()) return NotFound();
+
+			//	return Ok(stats);
+			//}
+			//catch (Exception)
+			//{
+			//	return Problem();
+			//}
 		}
-
 
 		[HttpGet("Mc{mcUuid}/History")]
 		public IActionResult GetHistory(Guid mcUuid, ProfileType? profileType = null, DateTime? fromDateTime = null, DateTime? toDateTime = null)
 		{
-			try
-			{
-				Player player = _playerService.GetByMcUuid(mcUuid);
+			throw new NotImplementedException();
 
-				List<Stats> stats = _statsService.GetHistory(player.Id, profileType, fromDateTime, toDateTime);
+			//try
+			//{
+			//	Player player = _playerService.GetByMcUuid(mcUuid);
 
-				if (stats == null || !stats.Any()) return NotFound();
+			//	List<Stats> stats = _statsService.GetHistory(player.Id, profileType, fromDateTime, toDateTime);
 
-				return Ok(stats);
-			}
-			catch (Exception)
-			{
-				return Problem();
-			}
+			//	if (stats == null || !stats.Any()) return NotFound();
+
+			//	return Ok(stats);
+			//}
+			//catch (Exception)
+			//{
+			//	return Problem();
+			//}
 		}
 	}
 }

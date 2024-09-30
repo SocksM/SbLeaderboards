@@ -1,4 +1,4 @@
-﻿using SbLeaderboards.Resources.DTOs;
+﻿using SbLeaderboards.Resources.Models;
 
 namespace SbLeaderboards.Resources.Interfaces.IRepository
 {

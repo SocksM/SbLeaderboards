@@ -15,7 +15,7 @@
 		//public List<object> temp_stat_buffs { get; set; }
 		//public List<string> disabled_potion_effects { get; set; }
 		//public List<string> visited_modes { get; set; }
-		public Experience experience { get; set; }
+		public Experience experience { get; set; } = null!;
 		//public int reaper_peppers_eaten { get; set; }
 		//public double fastest_target_practice { get; set; }
 	}

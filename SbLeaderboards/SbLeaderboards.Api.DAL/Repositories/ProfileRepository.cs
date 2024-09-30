@@ -1,6 +1,6 @@
 using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Presentation.DAL.Repositories;
-using SbLeaderboards.Resources.DTOs;
+using SbLeaderboards.Resources.Models;
 using SbLeaderboards.Resources.Interfaces.IRepository;
 
 namespace SbLeaderboards.Api.DAL.Repositories
@@ -43,19 +43,23 @@ namespace SbLeaderboards.Api.DAL.Repositories
 
 		private List<Profile> GetChilderen(List<Profile> profiles)
 		{
-			List<Stats> stats = _statsRepository.GetWhere(stats => profiles.Select(profile => profile.Id).ToList().Contains(stats.ProfileId));
-			profiles = profiles.GroupJoin(stats, 
-				profile => profile.Id, 
-				stats => stats.ProfileId, 
-				(profile, stats) => { profile.Stats.AddRange(stats); return profile; }
-				).ToList();
-			return profiles;
+			throw new NotImplementedException();
+
+			//List<Stats> stats = _statsRepository.GetWhere(stats => profiles.Select(profile => profile.Id).ToList().Contains(stats.ProfileId));
+			//profiles = profiles.GroupJoin(stats, 
+			//	profile => profile.Id, 
+			//	stats => stats.ProfileId, 
+			//	(profile, stats) => { profile.Stats.AddRange(stats); return profile; }
+			//	).ToList();
+			//return profiles;
 		}
 
 		private Profile GetChilderen(Profile profile)
 		{
-			profile.Stats = _statsRepository.GetByProfileId(profile.Id);
-			return profile;
+			throw new NotImplementedException();
+
+			//profile.Stats = _statsRepository.GetByProfileId(profile.Id);
+			//return profile;
 		}
 	}
 }

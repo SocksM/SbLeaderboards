@@ -924,7 +924,6 @@
       },
       "SbLeaderboards.Api.BLL/1.0.0": {
         "dependencies": {
-          "SbLeaderboards.Api.DAL": "1.0.0",
           "SbLeaderboards.Resources": "1.0.0"
         },
         "runtime": {

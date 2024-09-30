@@ -1,10 +1,9 @@
-﻿using SbLeaderboards.Resources.DTOs;
+﻿using SbLeaderboards.Resources.Models;
 
 namespace SbLeaderboards.Resources.Interfaces.IRepository
 {
 	public interface IStatsRepository : IDirectDbRepository<Stats>
 	{
-		public List<Stats> GetByProfileId(int profileId);
 	}
 
 }

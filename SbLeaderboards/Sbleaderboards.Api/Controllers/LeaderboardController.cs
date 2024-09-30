@@ -1,19 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SbLeaderboards.Api.BLL.Services;
+using SbLeaderboards.Api.BLL.Services.DbServices;
 using SbLeaderboards.Api.DAL.Repositories;
-using SbLeaderboards.Resources.DTOs;
+using SbLeaderboards.Resources.Models;
 using SbLeaderboards.Resources.Enums;
 
 namespace SbLeaderboards.Api.Controllers
 {
-	[Route("api/[controller]")]
+    [Route("api/[controller]")]
 	[ApiController]
 	public class LeaderboardController : ControllerBase
 	{
 		private readonly LeaderboardService _leaderboardService;
         public LeaderboardController(IConfiguration configuration) : base()
         {
-			_leaderboardService = new LeaderboardService(new StatsService(new StatsRepository(new DAL.Context.SbLeaderboardsContext(new DAL.Configuration.AppConfiguration(configuration)))));
+			throw new NotImplementedException();
+			//_leaderboardService = new LeaderboardService(new StatsService(new StatsRepository(new DAL.Context.SbLeaderboardsContext(new DAL.Configuration.AppConfiguration(configuration)))));
         }
 
         [HttpGet]

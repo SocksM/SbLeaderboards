@@ -41,6 +41,7 @@ namespace SbLeaderboards.Api
 			}
 
 			app.UseHttpsRedirection();
+
 			app.UseAuthorization();
 
 			app.MapControllers();

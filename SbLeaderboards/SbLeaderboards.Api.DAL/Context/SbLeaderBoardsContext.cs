@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SbLeaderboards.Api.DAL.Configuration;
+using SbLeaderboards.Resources.Models;
 
 namespace SbLeaderboards.Api.DAL.Context
 {
 	public class SbLeaderboardsContext : DbContext
 	{
-		public DbSet<Resources.DTOs.Player> Players { get; set; }
-		public DbSet<Resources.DTOs.Profile> Profiles { get; set; }
-		public DbSet<Resources.DTOs.Stats> Stats { get; set; }
+		public DbSet<Player> Players { get; set; }
+		public DbSet<Profile> Profiles { get; set; }
+		public DbSet<Stats> Stats { get; set; }
 		
 		private readonly string _connectionString;
 

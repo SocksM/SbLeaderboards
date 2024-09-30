@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Resources.Interfaces.IRepository;
-using SbLeaderboards.Resources.DTOs;
+using SbLeaderboards.Resources.Models;
 
 namespace SbLeaderboards.Presentation.DAL.Repositories
 {

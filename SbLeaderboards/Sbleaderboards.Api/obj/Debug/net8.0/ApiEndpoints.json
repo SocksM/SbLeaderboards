@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "SbLeaderboards.Api.Controllers.PlayerController",
+    "ContainingType": "SbLeaderboards.Api.Controllers.DirectDbController\u00601[[SbLeaderboards.Resources.Models.Player, SbLeaderboards.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
     "Method": "GetAll",
     "RelativePath": "api/Player",
     "HttpMethod": "GET",
@@ -16,7 +16,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SbLeaderboards.Api.Controllers.PlayerController",
+    "ContainingType": "SbLeaderboards.Api.Controllers.DirectDbController\u00601[[SbLeaderboards.Resources.Models.Player, SbLeaderboards.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
     "Method": "Get",
     "RelativePath": "api/Player/{id}",
     "HttpMethod": "GET",
@@ -47,6 +47,80 @@
       {
         "Name": "mcUuid",
         "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "includeChilderen",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SbLeaderboards.Api.Controllers.DirectDbController\u00601[[SbLeaderboards.Resources.Models.Profile, SbLeaderboards.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
+    "RelativePath": "api/Profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "includeChilderen",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SbLeaderboards.Api.Controllers.DirectDbController\u00601[[SbLeaderboards.Resources.Models.Profile, SbLeaderboards.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Get",
+    "RelativePath": "api/Profile/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "includeChilderen",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SbLeaderboards.Api.Controllers.DirectDbController\u00601[[SbLeaderboards.Resources.Models.Stats, SbLeaderboards.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
+    "RelativePath": "api/Stats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "includeChilderen",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SbLeaderboards.Api.Controllers.DirectDbController\u00601[[SbLeaderboards.Resources.Models.Stats, SbLeaderboards.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Get",
+    "RelativePath": "api/Stats/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       },
       {

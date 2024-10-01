@@ -2,10 +2,6 @@
 using SbLeaderboards.Presentation.DAL.Repositories;
 using SbLeaderboards.Resources.Interfaces.IRepository;
 using SbLeaderboards.Resources.Models;
-using SbLeaderboards.Api.DAL.ApiRepositories;
-using SbLeaderboards.Resources.Interfaces.IApiRepository;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
 
 namespace SbLeaderboards.Api.DAL.Repositories
 {

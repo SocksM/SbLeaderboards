@@ -1,26 +1,44 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace SbLeaderboards.Api.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitialMigrationV2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "players",
+                name: "Players",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    McUuid = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    McUuid = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    lastNameCheck = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_players", x => x.Id);
+                    table.PrimaryKey("PK_Players", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Profiles",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PlayerId = table.Column<int>(type: "int", nullable: false),
+                    ProfileType = table.Column<int>(type: "int", nullable: false),
+                    ProfileId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Profiles", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -29,8 +47,7 @@ namespace SbLeaderboards.Api.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PlayerId = table.Column<int>(type: "int", nullable: false),
-                    ProfileType = table.Column<int>(type: "int", nullable: false),
+                    ProfileId = table.Column<int>(type: "int", nullable: false),
                     Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SkyblockExp = table.Column<int>(type: "int", nullable: false),
                     TamingExp = table.Column<int>(type: "int", nullable: false),
@@ -49,15 +66,21 @@ namespace SbLeaderboards.Api.DAL.Migrations
                     ArcherExp = table.Column<int>(type: "int", nullable: false),
                     TankExp = table.Column<int>(type: "int", nullable: false),
                     BerserkerExp = table.Column<int>(type: "int", nullable: false),
-                    MageExp = table.Column<int>(type: "int", nullable: false)
+                    MageExp = table.Column<int>(type: "int", nullable: false),
+                    PlayerId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Stats", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Stats_players_PlayerId",
+                        name: "FK_Stats_Players_PlayerId",
                         column: x => x.PlayerId,
-                        principalTable: "players",
+                        principalTable: "Players",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Stats_Profiles_ProfileId",
+                        column: x => x.ProfileId,
+                        principalTable: "Profiles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -66,6 +89,11 @@ namespace SbLeaderboards.Api.DAL.Migrations
                 name: "IX_Stats_PlayerId",
                 table: "Stats",
                 column: "PlayerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Stats_ProfileId",
+                table: "Stats",
+                column: "ProfileId");
         }
 
         /// <inheritdoc />
@@ -75,7 +103,10 @@ namespace SbLeaderboards.Api.DAL.Migrations
                 name: "Stats");
 
             migrationBuilder.DropTable(
-                name: "players");
+                name: "Players");
+
+            migrationBuilder.DropTable(
+                name: "Profiles");
         }
     }
 }

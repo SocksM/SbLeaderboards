@@ -21,6 +21,17 @@ namespace SbLeaderboards.Api.DAL.Context
 		{
 			optionsBuilder.UseSqlServer(_connectionString);
 		}
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<Player>()
+				.Navigation(p => p.Profiles)
+				.AutoInclude();
+
+			modelBuilder.Entity<Profile>()
+				.Navigation(p => p.Stats)
+				.AutoInclude();
+		}
 	}
 }
 

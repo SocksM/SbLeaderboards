@@ -14,22 +14,20 @@ namespace SbLeaderboards.Api.Controllers
 	public class PlayerController : ControllerBase
 	{
 		private readonly PlayerService _playerService;
-		private readonly StatsService _statsService;
 
 		public PlayerController(IConfiguration configuration) : base()
 		{
 			_playerService = new PlayerService(new PlayerRepository(new SbLeaderboardsContext(new AppConfiguration(configuration))), new MojangApiRepository());
-			_statsService = new StatsService(new StatsRepository(new SbLeaderboardsContext(new AppConfiguration(configuration))));
 		}
 
 		[HttpGet]
-		public IActionResult GetAll()
+		public IActionResult GetAll(bool includeChilderen = false)
 		{
 			try
 			{
-				var players = _playerService.GetAll();
+				var players = _playerService.GetAll(includeChilderen);
 
-				if (players == null) return NotFound();
+				if (players.Count == 0) return NotFound();
 
 				return Ok(players);
 			}
@@ -40,11 +38,11 @@ namespace SbLeaderboards.Api.Controllers
 		}
 
 		[HttpGet("{id}")]
-		public IActionResult Get(int id)
+		public IActionResult Get(int id, bool includeChilderen = true)
 		{
 			try
 			{
-				var player = _playerService.GetById(id);
+				var player = _playerService.GetById(id, includeChilderen);
 
 				if (player == null) return NotFound();
 
@@ -58,11 +56,11 @@ namespace SbLeaderboards.Api.Controllers
 		}
 
 		[HttpGet("Mc{mcUuid}")]
-		public IActionResult Get(Guid mcUuid)
+		public IActionResult Get(Guid mcUuid, bool includeChilderen = true)
 		{
 			try
 			{
-				var player = _playerService.GetByMcUuid(mcUuid);
+				var player = _playerService.GetByMcUuid(mcUuid, includeChilderen);
 
 				if (player == null) return NotFound();
 
@@ -73,46 +71,6 @@ namespace SbLeaderboards.Api.Controllers
 				return Problem();
 			}
 
-		}
-
-		[HttpGet("{id}/History")]
-		public IActionResult GetHistory(int id, ProfileType? profileType = null, DateTime? fromDateTime = null, DateTime? toDateTime = null)
-		{
-			throw new NotImplementedException();
-
-			//try
-			//{
-			//	List<Stats> stats = _statsService.GetHistory(id, profileType, fromDateTime, toDateTime);
-
-			//	if (stats == null || !stats.Any()) return NotFound();
-
-			//	return Ok(stats);
-			//}
-			//catch (Exception)
-			//{
-			//	return Problem();
-			//}
-		}
-
-		[HttpGet("Mc{mcUuid}/History")]
-		public IActionResult GetHistory(Guid mcUuid, ProfileType? profileType = null, DateTime? fromDateTime = null, DateTime? toDateTime = null)
-		{
-			throw new NotImplementedException();
-
-			//try
-			//{
-			//	Player player = _playerService.GetByMcUuid(mcUuid);
-
-			//	List<Stats> stats = _statsService.GetHistory(player.Id, profileType, fromDateTime, toDateTime);
-
-			//	if (stats == null || !stats.Any()) return NotFound();
-
-			//	return Ok(stats);
-			//}
-			//catch (Exception)
-			//{
-			//	return Problem();
-			//}
 		}
 	}
 }

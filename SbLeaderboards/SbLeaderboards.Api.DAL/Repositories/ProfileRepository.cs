@@ -27,13 +27,6 @@ namespace SbLeaderboards.Api.DAL.Repositories
 			return profile;
 		}
 
-		public Profile GetByPlayerId(int playerId, bool getChilderen = false)
-		{
-			Profile profile = _dbSet.FirstOrDefault(profile => profile.PlayerId == playerId);
-			if (getChilderen) profile = GetChilderen(profile);
-			return profile;
-		}
-
 		public List<Profile> GetWhere(Func<Profile, bool> where, bool getChilderen = false)
 		{
 			List<Profile> profiles = base.GetWhere(where);

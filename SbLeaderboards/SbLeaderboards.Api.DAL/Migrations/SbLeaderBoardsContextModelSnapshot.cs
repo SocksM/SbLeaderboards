@@ -11,7 +11,7 @@ using SbLeaderboards.Api.DAL.Context;
 namespace SbLeaderboards.Api.DAL.Migrations
 {
     [DbContext(typeof(SbLeaderboardsContext))]
-    partial class SbLeaderBoardsContextModelSnapshot : ModelSnapshot
+    partial class SbLeaderboardsContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -22,7 +22,7 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SbLeaderboards.Resources.DTOs.Player", b =>
+            modelBuilder.Entity("SbLeaderboards.Resources.Models.Player", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,7 +45,29 @@ namespace SbLeaderboards.Api.DAL.Migrations
                     b.ToTable("Players");
                 });
 
-            modelBuilder.Entity("SbLeaderboards.Resources.DTOs.Stats", b =>
+            modelBuilder.Entity("SbLeaderboards.Resources.Models.Profile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PlayerId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("ProfileId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("ProfileType")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Profiles");
+                });
+
+            modelBuilder.Entity("SbLeaderboards.Resources.Models.Stats", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -92,10 +114,10 @@ namespace SbLeaderboards.Api.DAL.Migrations
                     b.Property<int>("MiningExp")
                         .HasColumnType("int");
 
-                    b.Property<int>("PlayerId")
+                    b.Property<int?>("PlayerId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProfileType")
+                    b.Property<int>("ProfileId")
                         .HasColumnType("int");
 
                     b.Property<int>("RunecraftingExp")
@@ -118,7 +140,34 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PlayerId");
+
+                    b.HasIndex("ProfileId");
+
                     b.ToTable("Stats");
+                });
+
+            modelBuilder.Entity("SbLeaderboards.Resources.Models.Stats", b =>
+                {
+                    b.HasOne("SbLeaderboards.Resources.Models.Player", null)
+                        .WithMany("StatList")
+                        .HasForeignKey("PlayerId");
+
+                    b.HasOne("SbLeaderboards.Resources.Models.Profile", null)
+                        .WithMany("Stats")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("SbLeaderboards.Resources.Models.Player", b =>
+                {
+                    b.Navigation("StatList");
+                });
+
+            modelBuilder.Entity("SbLeaderboards.Resources.Models.Profile", b =>
+                {
+                    b.Navigation("Stats");
                 });
 #pragma warning restore 612, 618
         }

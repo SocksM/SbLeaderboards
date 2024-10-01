@@ -8,10 +8,5 @@ namespace SbLeaderboards.Api.DAL.Repositories
 	public class StatsRepository : DirectDbRepository<Stats>, IStatsRepository
 	{
 		public StatsRepository(SbLeaderboardsContext context) : base(context) { }
-
-        public List<Stats> GetByProfileId(int profileId)
-		{
-			return _dbSet.Where(stats => stats.ProfileId == profileId).ToList();
-		}
 	}
 }

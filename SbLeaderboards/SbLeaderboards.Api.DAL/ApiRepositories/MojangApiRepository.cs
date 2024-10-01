@@ -10,12 +10,12 @@ namespace SbLeaderboards.Api.DAL.ApiRepositories
 
 		public async Task<Guid> GetMcUuidByName(string name)
 		{
-			return (Guid)(await base.Get($"{ApiBaseUrl1}/users/profiles/minecraft/{name}"))["id"];
+			return (Guid)(await Get($"{ApiBaseUrl1}/users/profiles/minecraft/{name}"))["id"];
 		}
 
 		public async Task<string> GetNameByMcUuid(Guid uuid)
 		{
-			return (string)(await base.Get($"{ApiBaseUrl2}/session/minecraft/profile/{uuid}"))["name"];
+			return (string)(await Get($"{ApiBaseUrl2}/session/minecraft/profile/{uuid}"))["name"];
 		}
 	}
 }

@@ -2,7 +2,6 @@
 {
 	public class Stats : Entity
 	{
-		public int ProfileId { get; set; }
 		public DateTime Timestamp { get; set; }
 		public int SkyblockExp { get; set; }
 		public int TamingExp { get; set; }

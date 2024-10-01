@@ -4,6 +4,8 @@ using SbLeaderboards.Resources.Interfaces.IRepository;
 using SbLeaderboards.Resources.Models;
 using SbLeaderboards.Api.DAL.ApiRepositories;
 using SbLeaderboards.Resources.Interfaces.IApiRepository;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace SbLeaderboards.Api.DAL.Repositories
 {
@@ -12,10 +14,10 @@ namespace SbLeaderboards.Api.DAL.Repositories
 		public PlayerRepository(SbLeaderboardsContext context) : base(context)
 		{
 		}
-
-		public Player GetByMcUuid(Guid mcUuid, bool getChilderen = false)
+		
+		public Player GetByMcUuid(Guid mcUuid, bool includeChilderen = false)
 		{
-			return _dbSet.FirstOrDefault(player => player.McUuid == mcUuid);
+			return GetWhere(player => player.McUuid == mcUuid, includeChilderen).FirstOrDefault();
 		}
 	}
 }

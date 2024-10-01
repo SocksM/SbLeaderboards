@@ -2,6 +2,7 @@
 using SbLeaderboards.Resources.Interfaces.IRepository;
 using SbLeaderboards.Resources.Models;
 using System.Diagnostics;
+using System.Numerics;
 
 namespace SbLeaderboards.Api.BLL.Services.DbServices
 {
@@ -15,45 +16,58 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 			_mojangApiRepository = mojangApiRepository;
 		}
 
-        public Player GetByMcUuid(Guid mcUuid)
+		public new List<Player> GetAll(bool includeChilderen = false)
+		{
+			List<Player> players = _playerRepository.GetAll(includeChilderen);
+			for (int i = 0; i < players.Count; i++)
+			{
+				KeyValuePair<bool, Player> result = UpdateName(players[i]);
+				if (result.Key) players[i] = result.Value;
+			}
+			return players;
+		}
+
+        public Player GetByMcUuid(Guid mcUuid, bool includeChilderen = true)
         {
-            Player player = _playerRepository.GetByMcUuid(mcUuid);
-            player = UpdateName(player).Value;
-            return player;
+            Player player = _playerRepository.GetByMcUuid(mcUuid, includeChilderen);
+			KeyValuePair<bool, Player> result = UpdateName(player);
+			if (result.Key) player = result.Value;
+			return player;
         }
 
-        public new Player GetById(int id)
+        public new Player GetById(int id, bool includeChilderen = true)
         {
-            Player player = _playerRepository.GetById(id);
-            KeyValuePair<bool, Player> result = new KeyValuePair<bool, Player>(false, player);
-			try
-            {
-                result = UpdateName(player);
-			}
-            catch (Exception e)
-            {
-                Debug.Print($"Couldn't run name update check. Look into issue ASAP\nException: {e}");
-            }
+            Player player = _playerRepository.GetById(id, includeChilderen);
+            KeyValuePair<bool, Player> result = UpdateName(player);
             if (result.Key) player = result.Value;
             return player;
         }
 
         public KeyValuePair<bool, Player> UpdateName(Player player, TimeSpan? requiredWait = null)
         {
-			if (requiredWait == null) requiredWait = TimeSpan.FromHours(12);
+			if (requiredWait == null) requiredWait = TimeSpan.FromHours(24);
 
-			if (DateTime.Now - player.lastNameCheck > requiredWait)
+			if (DateTime.Now - player.LastNameCheck > requiredWait)
 			{
-				string newName = _mojangApiRepository.GetNameByMcUuid(player.McUuid).Result;
+				string? newName = null;
+				try
+				{
+					newName = _mojangApiRepository.GetNameByMcUuid(player.McUuid).Result;
+				}
+				catch (Exception e)
+				{
+					Debug.Print($"Couldn't run name update check. Look into issue ASAP\nException: {e}");
+				}
+				
 				if (newName != null && newName != player.Name)
 				{
 					player.Name = newName;
-					player.lastNameCheck = DateTime.Now;
+					player.LastNameCheck = DateTime.Now;
 					Update(player);
 					return new KeyValuePair<bool, Player>(true, player);
 				}
 			}
 			return new KeyValuePair<bool, Player>(false, player);
-		}
+        }
     }
 }

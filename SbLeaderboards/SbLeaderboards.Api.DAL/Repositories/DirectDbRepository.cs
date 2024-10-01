@@ -2,6 +2,7 @@
 using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Resources.Interfaces.IRepository;
 using SbLeaderboards.Resources.Models;
+using System.Linq.Expressions;
 
 namespace SbLeaderboards.Presentation.DAL.Repositories
 {
@@ -16,7 +17,7 @@ namespace SbLeaderboards.Presentation.DAL.Repositories
 			_dbSet = context.Set<E>();
 		}
 
-        public void Create(E entity)
+		public void Create(E entity)
 		{
 			_dbSet.Add(entity);
 			_context.SaveChanges();
@@ -28,19 +29,32 @@ namespace SbLeaderboards.Presentation.DAL.Repositories
 			_context.SaveChanges();
 		}
 
-		public List<E> GetAll()
+		public List<E> GetAll(bool includeChilderen = false)
 		{
-			return _dbSet.ToList();
+			switch (includeChilderen)
+			{
+				case true:
+					return _dbSet.ToList();
+				case false:
+					return _dbSet.IgnoreAutoIncludes().ToList();
+			}
+
 		}
 
-		public E GetById(int id)
+		public E GetById(int id, bool includeChilderen = true)
 		{
-			return _dbSet.FirstOrDefault(e => e.Id == id);
+			return GetWhere(e => e.Id == id, includeChilderen).FirstOrDefault();
 		}
 
-		public List<E> GetWhere(Func<E, bool> where)
+		public List<E> GetWhere(Func<E, bool> where, bool includeChilderen = false)
 		{
-			return _dbSet.Where(where).ToList();
+			switch (includeChilderen)
+			{
+				case true:
+					return _dbSet.Where(where).ToList();
+				case false:
+					return _dbSet.IgnoreAutoIncludes().Where(where).ToList();
+			}
 		}
 
 		public void Update(E entity)
@@ -48,5 +62,6 @@ namespace SbLeaderboards.Presentation.DAL.Repositories
 			_dbSet.Update(entity);
 			_context.SaveChanges();
 		}
+
 	}
 }

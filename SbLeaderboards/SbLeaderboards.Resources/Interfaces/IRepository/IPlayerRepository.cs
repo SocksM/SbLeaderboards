@@ -4,6 +4,6 @@ namespace SbLeaderboards.Resources.Interfaces.IRepository
 {
 	public interface IPlayerRepository : IDirectDbRepository<Player>
 	{
-		public Player GetByMcUuid(Guid McUuid, bool getChilderen = false);
+		public Player GetByMcUuid(Guid McUuid, bool getChilderen = true);
 	}
 }

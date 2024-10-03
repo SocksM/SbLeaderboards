@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.resources\\enums\\profiletype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|solutionrelative:sbleaderboards.resources\\enums\\profiletype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.resources\\models\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|solutionrelative:sbleaderboards.resources\\models\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\SbLeaderboards.Api.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api\\apimodels\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\SbLeaderboards.Api.csproj|solutionrelative:sbleaderboards.api\\apimodels\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.resources\\enums\\profiletype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|solutionrelative:sbleaderboards.resources\\enums\\profiletype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\SbLeaderboards.Api.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api\\apimodels\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -53,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.resources\\models\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|solutionrelative:sbleaderboards.resources\\models\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.resources\\models\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|solutionrelative:sbleaderboards.resources\\models\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CFE8837D-952D-4726-8902-5EB479A49095}|SbLeaderboards.Web\\sbleaderboards.web.esproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.web\\src\\combinedprovider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -108,11 +108,11 @@
         },
         {
           "DockedWidth": 61,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ProfileType.cs",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Enums\\ProfileType.cs",
               "RelativeDocumentMoniker": "SbLeaderboards.Resources\\Enums\\ProfileType.cs",
@@ -125,19 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProfileCuteName.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Enums\\ProfileCuteName.cs",
-              "RelativeDocumentMoniker": "SbLeaderboards.Resources\\Enums\\ProfileCuteName.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Enums\\ProfileCuteName.cs",
-              "RelativeToolTip": "SbLeaderboards.Resources\\Enums\\ProfileCuteName.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T20:22:16.686Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Stats.cs",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\ApiModels\\Stats.cs",
               "RelativeDocumentMoniker": "Sbleaderboards.Api\\ApiModels\\Stats.cs",
@@ -155,14 +143,14 @@
               "RelativeDocumentMoniker": "Sbleaderboards.Api\\ApiModels\\Profile.cs",
               "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\ApiModels\\Profile.cs",
               "RelativeToolTip": "Sbleaderboards.Api\\ApiModels\\Profile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T20:20:44.908Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Entity.cs",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\ApiModels\\Entity.cs",
               "RelativeDocumentMoniker": "Sbleaderboards.Api\\ApiModels\\Entity.cs",
@@ -175,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\ApiModels\\Player.cs",
               "RelativeDocumentMoniker": "Sbleaderboards.Api\\ApiModels\\Player.cs",
@@ -188,7 +176,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "Profile.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Profile.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Resources\\Models\\Profile.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Profile.cs",
+              "RelativeToolTip": "SbLeaderboards.Resources\\Models\\Profile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T19:58:28.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProfileCuteName.cs",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Enums\\ProfileCuteName.cs",
+              "RelativeDocumentMoniker": "SbLeaderboards.Resources\\Enums\\ProfileCuteName.cs",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Enums\\ProfileCuteName.cs",
+              "RelativeToolTip": "SbLeaderboards.Resources\\Enums\\ProfileCuteName.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T20:22:16.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "SbLeaderboards.Api.csproj",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\SbLeaderboards.Api.csproj",
               "RelativeDocumentMoniker": "Sbleaderboards.Api\\SbLeaderboards.Api.csproj",
@@ -220,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "SbLeaderBoardsContext.cs",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Api.DAL\\Context\\SbLeaderBoardsContext.cs",
               "RelativeDocumentMoniker": "SbLeaderboards.Api.DAL\\Context\\SbLeaderBoardsContext.cs",
@@ -232,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Stats.cs",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Stats.cs",
               "RelativeDocumentMoniker": "SbLeaderboards.Resources\\Models\\Stats.cs",
@@ -241,18 +254,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T19:59:37.907Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Profile.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Profile.cs",
-              "RelativeDocumentMoniker": "SbLeaderboards.Resources\\Models\\Profile.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Profile.cs",
-              "RelativeToolTip": "SbLeaderboards.Resources\\Models\\Profile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T19:58:28.615Z"
             }
           ]
         },
@@ -341,7 +342,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "DirectDbController.cs",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\Controllers\\DirectDbController.cs",
               "RelativeDocumentMoniker": "Sbleaderboards.Api\\Controllers\\DirectDbController.cs",
@@ -354,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "StatsController.cs",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\Controllers\\StatsController.cs",
               "RelativeDocumentMoniker": "Sbleaderboards.Api\\Controllers\\StatsController.cs",
@@ -366,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "LeaderboardController.cs",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\Controllers\\LeaderboardController.cs",
               "RelativeDocumentMoniker": "Sbleaderboards.Api\\Controllers\\LeaderboardController.cs",
@@ -378,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "styles.css",
               "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\sbleaderboards.web\\src\\styles.css",
               "RelativeDocumentMoniker": "sbleaderboards.web\\src\\styles.css",

@@ -21,5 +21,28 @@
 		public int TankExp { get; set; }
 		public int BerserkerExp { get; set; }
 		public int MageExp { get; set; }
-	}
+
+        public Stats(Resources.Models.Stats stats) : base(new Resources.Models.Entity { Id = stats.Id }) 
+        {
+			Timestamp = stats.Timestamp;
+			SkyblockExp = stats.SkyblockExp;
+			TamingExp = stats.TamingExp;
+			MiningExp = stats.MiningExp;
+			ForagingExp = stats.ForagingExp;
+			EnchantingExp = stats.EnchantingExp;
+			CarpentryExp = stats.CarpentryExp;
+			FarmingExp = stats.FarmingExp;
+			CombatExp = stats.CombatExp;
+			FishingExp = stats.FishingExp;
+			AlchemyExp = stats.AlchemyExp;
+			RunecraftingExp = stats.RunecraftingExp;
+			SocialExp = stats.SocialExp;
+			CatacombsExp = stats.CatacombsExp;
+			HealerExp = stats.HealerExp;
+			ArcherExp = stats.ArcherExp;
+			TankExp = stats.TankExp;
+			BerserkerExp = stats.BerserkerExp;
+			MageExp = stats.MageExp;
+        }
+    }
 }

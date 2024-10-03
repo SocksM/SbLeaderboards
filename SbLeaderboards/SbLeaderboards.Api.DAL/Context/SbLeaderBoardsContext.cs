@@ -33,16 +33,14 @@ namespace SbLeaderboards.Api.DAL.Context
 				.AutoInclude();
 
 			modelBuilder.Entity<Profile>()
-				.HasOne(p => p.Player)  // Define the relationship
-				.WithMany(p => p.Profiles) // Assuming a Player has many Profiles
-				.HasForeignKey(p => p.PlayerId)
-				.OnDelete(DeleteBehavior.Cascade); // Set the desired delete behavior
+				.HasOne(p => p.Player)
+				.WithMany(p => p.Profiles)
+				.OnDelete(DeleteBehavior.Cascade);
 
 			modelBuilder.Entity<Stats>()
-				.HasOne(p => p.Profile)  // Define the relationship
-				.WithMany(p => p.Stats) // Assuming a Player has many Profiles
-				.HasForeignKey(p => p.ProfileId)
-				.OnDelete(DeleteBehavior.Cascade); // Set the desired delete behavior
+				.HasOne(p => p.Profile)
+				.WithMany(p => p.Stats) 
+				.OnDelete(DeleteBehavior.Cascade);
 
 
 		}

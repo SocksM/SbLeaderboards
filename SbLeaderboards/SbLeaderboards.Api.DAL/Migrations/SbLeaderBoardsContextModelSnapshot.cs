@@ -30,6 +30,9 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("LastNameCheck")
+                        .HasColumnType("datetime2");
+
                     b.Property<Guid>("McUuid")
                         .HasColumnType("uniqueidentifier");
 
@@ -37,12 +40,9 @@ namespace SbLeaderboards.Api.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("lastNameCheck")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Players", (string)null);
+                    b.ToTable("Players");
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Profile", b =>
@@ -53,18 +53,20 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("CuteName")
+                        .HasColumnType("int");
+
                     b.Property<int>("PlayerId")
                         .HasColumnType("int");
 
                     b.Property<Guid>("ProfileId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("ProfileType")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Profiles", (string)null);
+                    b.HasIndex("PlayerId");
+
+                    b.ToTable("Profiles");
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Stats", b =>
@@ -114,9 +116,6 @@ namespace SbLeaderboards.Api.DAL.Migrations
                     b.Property<int>("MiningExp")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PlayerId")
-                        .HasColumnType("int");
-
                     b.Property<int>("ProfileId")
                         .HasColumnType("int");
 
@@ -140,29 +139,36 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PlayerId");
-
                     b.HasIndex("ProfileId");
 
-                    b.ToTable("Stats", (string)null);
+                    b.ToTable("Stats");
+                });
+
+            modelBuilder.Entity("SbLeaderboards.Resources.Models.Profile", b =>
+                {
+                    b.HasOne("SbLeaderboards.Resources.Models.Player", "Player")
+                        .WithMany("Profiles")
+                        .HasForeignKey("PlayerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Player");
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Stats", b =>
                 {
-                    b.HasOne("SbLeaderboards.Resources.Models.Player", null)
-                        .WithMany("StatList")
-                        .HasForeignKey("PlayerId");
-
-                    b.HasOne("SbLeaderboards.Resources.Models.Profile", null)
+                    b.HasOne("SbLeaderboards.Resources.Models.Profile", "Profile")
                         .WithMany("Stats")
                         .HasForeignKey("ProfileId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Profile");
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Player", b =>
                 {
-                    b.Navigation("StatList");
+                    b.Navigation("Profiles");
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Profile", b =>

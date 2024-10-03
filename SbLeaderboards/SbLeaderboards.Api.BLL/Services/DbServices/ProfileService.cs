@@ -1,14 +1,14 @@
-using SbLeaderboards.Resources.Models;
-using SbLeaderboards.Resources.Interfaces.IRepository;
 using SbLeaderboards.Resources.Enums;
+using SbLeaderboards.Resources.Interfaces.IRepository;
+using SbLeaderboards.Resources.Models;
 
 namespace SbLeaderboards.Api.BLL.Services.DbServices
 {
-    public class ProfileService : DirectDbService<Profile>
-    {
+	public class ProfileService : DirectDbService<Profile>
+	{
 		public ProfileService(IProfileRepository repository) : base(repository)
-        {
-        }
+		{
+		}
 
 		public List<Profile> GetAllProfilesWithLatestStatOnly()
 		{
@@ -18,7 +18,7 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 				.Select(p => new Profile
 				{
 					PlayerId = p.PlayerId,
-					ProfileType = p.ProfileType,
+					CuteName = p.CuteName,
 					ProfileId = p.ProfileId,
 					Stats = p.Stats?
 						.OrderByDescending(s => s.Timestamp)
@@ -38,7 +38,7 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 				.Select(p => new Profile
 				{
 					PlayerId = p.PlayerId,
-					ProfileType = p.ProfileType,
+					CuteName = p.CuteName,
 					ProfileId = p.ProfileId,
 					Stats = p.Stats?
 						.OrderByDescending(s => s.Timestamp)

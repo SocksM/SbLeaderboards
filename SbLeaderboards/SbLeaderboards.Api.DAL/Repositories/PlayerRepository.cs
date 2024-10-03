@@ -10,7 +10,7 @@ namespace SbLeaderboards.Api.DAL.Repositories
 		public PlayerRepository(SbLeaderboardsContext context) : base(context)
 		{
 		}
-		
+
 		public Player GetByMcUuid(Guid mcUuid, bool includeChilderen = false)
 		{
 			return GetWhere(player => player.McUuid == mcUuid, includeChilderen).FirstOrDefault();

@@ -14,7 +14,7 @@ namespace SbLeaderboards.Api.Controllers
 		private readonly StatsService _statsService;
 
 		public StatsController(IConfiguration configuration) : base(configuration)
-        {
+		{
 			_statsService = new StatsService(new StatsRepository(new SbLeaderboardsContext(new AppConfiguration(configuration))));
 		}
 	}

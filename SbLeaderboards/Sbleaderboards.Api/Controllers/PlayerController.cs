@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SbLeaderboards.Api.BLL.Services.DbServices;
+using SbLeaderboards.Api.DAL.ApiRepositories;
 using SbLeaderboards.Api.DAL.Configuration;
 using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Api.DAL.Repositories;
 using SbLeaderboards.Resources.Models;
-using SbLeaderboards.Api.DAL.ApiRepositories;
 
 namespace SbLeaderboards.Api.Controllers
 {
-    [Route("api/[controller]")]
+	[Route("api/[controller]")]
 	[ApiController]
 	public class PlayerController : DirectDbController<Player>
 	{

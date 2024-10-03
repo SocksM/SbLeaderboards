@@ -6,8 +6,8 @@ using SbLeaderboards.Resources.Models;
 
 namespace SbLeaderboards.Api.BLL.Services
 {
-    public class LeaderboardService
-    {
+	public class LeaderboardService
+	{
 		protected readonly ProfileService _profileService;
 		protected readonly PlayerService _playerService;
 
@@ -23,7 +23,7 @@ namespace SbLeaderboards.Api.BLL.Services
 			Dictionary<string, Stats> NameProfileNameStatsDictionary = new Dictionary<string, Stats>();
 			foreach (Profile profile in profiles)
 			{
-				NameProfileNameStatsDictionary.Add($"{_playerService.GetById(profile.PlayerId, false).Name} ({profile.ProfileType.ToString()})", profile.Stats.First());
+				NameProfileNameStatsDictionary.Add($"{_playerService.GetById(profile.PlayerId, false).Name} ({profile.CuteName.ToString()})", profile.Stats.First());
 			}
 			return NameProfileNameStatsDictionary;
 		}

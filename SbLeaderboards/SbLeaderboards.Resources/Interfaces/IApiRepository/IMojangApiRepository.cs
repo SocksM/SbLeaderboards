@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-
-namespace SbLeaderboards.Resources.Interfaces.IApiRepository
+﻿namespace SbLeaderboards.Resources.Interfaces.IApiRepository
 {
 	public interface IMojangApiRepository
 	{

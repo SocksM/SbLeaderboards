@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SbLeaderboards.Api.BLL.Services.DbServices;
-using SbLeaderboards.Api.DAL.ApiRepositories;
 using SbLeaderboards.Api.DAL.Configuration;
 using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Api.DAL.Repositories;
@@ -16,7 +14,7 @@ namespace SbLeaderboards.Api.Controllers
 		private readonly ProfileService _profileService;
 
 		public ProfileController(IConfiguration configuration) : base(configuration)
-        {
+		{
 			_profileService = new ProfileService(new ProfileRepository(new SbLeaderboardsContext(new AppConfiguration(configuration))));
 
 		}

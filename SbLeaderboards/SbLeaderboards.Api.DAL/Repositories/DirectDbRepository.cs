@@ -2,7 +2,6 @@
 using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Resources.Interfaces.IRepository;
 using SbLeaderboards.Resources.Models;
-using System.Linq.Expressions;
 
 namespace SbLeaderboards.Presentation.DAL.Repositories
 {

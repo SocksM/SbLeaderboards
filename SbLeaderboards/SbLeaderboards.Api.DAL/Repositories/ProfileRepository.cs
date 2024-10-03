@@ -1,7 +1,7 @@
 using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Presentation.DAL.Repositories;
-using SbLeaderboards.Resources.Models;
 using SbLeaderboards.Resources.Interfaces.IRepository;
+using SbLeaderboards.Resources.Models;
 
 namespace SbLeaderboards.Api.DAL.Repositories
 {

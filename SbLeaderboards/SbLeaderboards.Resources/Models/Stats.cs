@@ -2,7 +2,9 @@
 {
 	public class Stats : Entity
 	{
-		public int ProfileId { get; set; }
+		public int ProfileId { get; set; } // Foreign key
+		public Profile Profile { get; set; } // Navigation Property
+
 		public DateTime Timestamp { get; set; }
 		public int SkyblockExp { get; set; }
 		public int TamingExp { get; set; }

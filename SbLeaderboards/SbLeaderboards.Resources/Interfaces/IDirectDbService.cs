@@ -1,10 +1,9 @@
-﻿using SbLeaderboards.Resources.Interfaces.IRepository;
-using SbLeaderboards.Resources.Models;
+﻿using SbLeaderboards.Resources.Models;
 
 namespace SbLeaderboards.Resources.Interfaces
 {
-    public interface IDirectDbService<E> where E : Entity
-    {
+	public interface IDirectDbService<E> where E : Entity
+	{
 		public void Create(E entity);
 		public void Delete(E entity);
 		public List<E> GetAll(bool includeChilderen = false);

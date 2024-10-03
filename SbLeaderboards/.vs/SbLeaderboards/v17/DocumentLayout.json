@@ -1,40 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\SbLeaderboards.Api.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api\\apimodels\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\SbLeaderboards.Api.csproj|solutionrelative:sbleaderboards.api\\apimodels\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\SbLeaderboards.Api.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api\\apimodels\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\SbLeaderboards.Api.csproj|solutionrelative:sbleaderboards.api\\apimodels\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\SbLeaderboards.Api.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api\\apimodels\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\SbLeaderboards.Api.csproj|solutionrelative:sbleaderboards.api\\apimodels\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\SbLeaderboards.Api.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.api\\apimodels\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B032D377-52F4-4A7C-91EB-8E99E5487658}|Sbleaderboards.Api\\SbLeaderboards.Api.csproj|solutionrelative:sbleaderboards.api\\apimodels\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.resources\\models\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|solutionrelative:sbleaderboards.resources\\models\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.resources\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|solutionrelative:sbleaderboards.resources\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.resources\\models\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|solutionrelative:sbleaderboards.resources\\models\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.resources\\models\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F04A496-66A7-4B06-94E8-AA37C6C718EA}|SbLeaderboards.Resources\\SbLeaderboards.Resources.csproj|solutionrelative:sbleaderboards.resources\\models\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -42,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 11,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,116 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Stats.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\ApiModels\\Stats.cs",
-              "RelativeDocumentMoniker": "Sbleaderboards.Api\\ApiModels\\Stats.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\ApiModels\\Stats.cs",
-              "RelativeToolTip": "Sbleaderboards.Api\\ApiModels\\Stats.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T20:28:30.606Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Profile.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\ApiModels\\Profile.cs",
-              "RelativeDocumentMoniker": "Sbleaderboards.Api\\ApiModels\\Profile.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\ApiModels\\Profile.cs",
-              "RelativeToolTip": "Sbleaderboards.Api\\ApiModels\\Profile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T20:28:30.067Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\ApiModels\\Player.cs",
-              "RelativeDocumentMoniker": "Sbleaderboards.Api\\ApiModels\\Player.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\ApiModels\\Player.cs",
-              "RelativeToolTip": "Sbleaderboards.Api\\ApiModels\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T20:28:29.502Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Entity.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\ApiModels\\Entity.cs",
-              "RelativeDocumentMoniker": "Sbleaderboards.Api\\ApiModels\\Entity.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\Sbleaderboards.Api\\ApiModels\\Entity.cs",
-              "RelativeToolTip": "Sbleaderboards.Api\\ApiModels\\Entity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T20:28:28.882Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 11,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Entity.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Entity.cs",
-              "RelativeDocumentMoniker": "SbLeaderboards.Resources\\Models\\Entity.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Entity.cs",
-              "RelativeToolTip": "SbLeaderboards.Resources\\Models\\Entity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T20:28:45.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Player.cs",
-              "RelativeDocumentMoniker": "SbLeaderboards.Resources\\Models\\Player.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Player.cs",
-              "RelativeToolTip": "SbLeaderboards.Resources\\Models\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T20:28:44.649Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Profile.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Profile.cs",
-              "RelativeDocumentMoniker": "SbLeaderboards.Resources\\Models\\Profile.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Profile.cs",
-              "RelativeToolTip": "SbLeaderboards.Resources\\Models\\Profile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T20:28:43.623Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Stats.cs",
-              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Stats.cs",
-              "RelativeDocumentMoniker": "SbLeaderboards.Resources\\Models\\Stats.cs",
-              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\SbLeaderboards.Resources\\Models\\Stats.cs",
-              "RelativeToolTip": "SbLeaderboards.Resources\\Models\\Stats.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T20:28:37.558Z",
-              "EditorCaption": ""
             }
           ]
         },

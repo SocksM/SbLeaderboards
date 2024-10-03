@@ -62,6 +62,9 @@ namespace SbLeaderboards.Api.DAL.Migrations
                     b.Property<Guid>("ProfileId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("PlayerId");
@@ -146,24 +149,20 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Profile", b =>
                 {
-                    b.HasOne("SbLeaderboards.Resources.Models.Player", "Player")
+                    b.HasOne("SbLeaderboards.Resources.Models.Player", null)
                         .WithMany("Profiles")
                         .HasForeignKey("PlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Player");
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Stats", b =>
                 {
-                    b.HasOne("SbLeaderboards.Resources.Models.Profile", "Profile")
+                    b.HasOne("SbLeaderboards.Resources.Models.Profile", null)
                         .WithMany("Stats")
                         .HasForeignKey("ProfileId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Profile");
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Player", b =>

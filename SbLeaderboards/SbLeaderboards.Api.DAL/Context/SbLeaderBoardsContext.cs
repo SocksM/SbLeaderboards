@@ -31,18 +31,6 @@ namespace SbLeaderboards.Api.DAL.Context
 			modelBuilder.Entity<Profile>()
 				.Navigation(p => p.Stats)
 				.AutoInclude();
-
-			modelBuilder.Entity<Profile>()
-				.HasOne(p => p.Player)
-				.WithMany(p => p.Profiles)
-				.OnDelete(DeleteBehavior.Cascade);
-
-			modelBuilder.Entity<Stats>()
-				.HasOne(p => p.Profile)
-				.WithMany(p => p.Stats) 
-				.OnDelete(DeleteBehavior.Cascade);
-
-
 		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿using SbLeaderboards.Resources.Interfaces.IApiRepository;
+﻿using SbLeaderboards.Resources.Enums;
+using SbLeaderboards.Resources.Interfaces.IApiRepository;
 using SbLeaderboards.Resources.Interfaces.IRepository;
 using SbLeaderboards.Resources.Models;
 using System.Diagnostics;
@@ -45,6 +46,8 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 
         public KeyValuePair<bool, Player> UpdateName(Player player, TimeSpan? requiredWait = null)
         {
+			return new KeyValuePair<bool, Player>(false, player);
+#warning disabled function no clue why it doesnt work????
 			if (requiredWait == null) requiredWait = TimeSpan.FromHours(24);
 
 			if (DateTime.Now - player.LastNameCheck > requiredWait)
@@ -69,5 +72,5 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 			}
 			return new KeyValuePair<bool, Player>(false, player);
         }
-    }
+	}
 }

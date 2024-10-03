@@ -1,15 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CFE8837D-952D-4726-8902-5EB479A49095}|SbLeaderboards.Web\\sbleaderboards.web.esproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.web\\src\\leaderboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{CFE8837D-952D-4726-8902-5EB479A49095}|SbLeaderboards.Web\\sbleaderboards.web.esproj|solutionrelative:sbleaderboards.web\\src\\leaderboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFE8837D-952D-4726-8902-5EB479A49095}|SbLeaderboards.Web\\sbleaderboards.web.esproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.web\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{CFE8837D-952D-4726-8902-5EB479A49095}|SbLeaderboards.Web\\sbleaderboards.web.esproj|solutionrelative:sbleaderboards.web\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFE8837D-952D-4726-8902-5EB479A49095}|SbLeaderboards.Web\\sbleaderboards.web.esproj|c:\\github\\sbleaderboards\\sbleaderboards\\sbleaderboards.web\\src\\main.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{CFE8837D-952D-4726-8902-5EB479A49095}|SbLeaderboards.Web\\sbleaderboards.web.esproj|solutionrelative:sbleaderboards.web\\src\\main.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 18,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 12,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,12 +35,38 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.jsx",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\sbleaderboards.web\\src\\App.jsx",
+              "RelativeDocumentMoniker": "sbleaderboards.web\\src\\App.jsx",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\sbleaderboards.web\\src\\App.jsx",
+              "RelativeToolTip": "sbleaderboards.web\\src\\App.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-03T10:32:07.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.jsx",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\sbleaderboards.web\\src\\main.jsx",
+              "RelativeDocumentMoniker": "sbleaderboards.web\\src\\main.jsx",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\sbleaderboards.web\\src\\main.jsx",
+              "RelativeToolTip": "sbleaderboards.web\\src\\main.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-03T10:25:07.829Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 5,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 15,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -36,6 +75,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Leaderboard.jsx",
+              "DocumentMoniker": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\sbleaderboards.web\\src\\Leaderboard.jsx",
+              "RelativeDocumentMoniker": "sbleaderboards.web\\src\\Leaderboard.jsx",
+              "ToolTip": "C:\\Github\\SbLeaderboards\\SbLeaderboards\\sbleaderboards.web\\src\\Leaderboard.jsx*",
+              "RelativeToolTip": "sbleaderboards.web\\src\\Leaderboard.jsx*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-03T10:24:46.575Z",
+              "EditorCaption": ""
             }
           ]
         },

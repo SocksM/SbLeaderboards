@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SbLeaderboards.Api.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd5d16511012e6520b86e8dda2ccc1c43aac952b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5996ba622eb96e76a5d5dee0d5ae720fb755068")]
 [assembly: System.Reflection.AssemblyProductAttribute("SbLeaderboards.Api.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SbLeaderboards.Api.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

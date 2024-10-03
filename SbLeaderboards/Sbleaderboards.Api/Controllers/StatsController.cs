@@ -16,7 +16,6 @@ namespace SbLeaderboards.Api.Controllers
 		public StatsController(IConfiguration configuration) : base(configuration)
         {
 			_statsService = new StatsService(new StatsRepository(new SbLeaderboardsContext(new AppConfiguration(configuration))));
-
 		}
 	}
 }

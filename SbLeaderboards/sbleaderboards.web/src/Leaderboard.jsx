@@ -51,8 +51,8 @@ function Leaderboard() {
 
     return (
         <Container className={`mt-4 transition ${isDarkMode ? "bg-dark text-light" : "bg-light text-dark"} w-100`}>
-            <Table striped hover responsive className={`transition ${isDarkMode ? "table-dark" : "table-light"} w-100`}>
-                <thead>
+            <Table striped hover responsive className={`transition ${isDarkMode ? "table-dark" : "table-light"}`}>
+                <thead className='w-100'>
                     <tr>
                         <th>Name</th>
                         <th>

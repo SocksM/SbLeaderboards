@@ -1,3 +1,4 @@
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SbLeaderboards.Resources.Interfaces.IApiRepository;
@@ -13,7 +14,7 @@ namespace SbLeaderboards.Api.DAL.ApiRepositories
 				HttpResponseMessage response = await client.GetAsync(apiUrl);
 				string content = await response.Content.ReadAsStringAsync();
 
-				if (response.IsSuccessStatusCode)
+				if (response.IsSuccessStatusCode && !content.IsNullOrEmpty())
 				{
 					try
 					{

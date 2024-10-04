@@ -8,11 +8,13 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 	public class PlayerService : DirectDbService<Player>
 	{
 		private readonly IPlayerRepository _playerRepository;
-		private readonly IMojangApiRepository _mojangApiRepository;
+		private readonly MojangApiService _mojangApiService;
+
+
 		public PlayerService(IPlayerRepository playerRepository, IMojangApiRepository mojangApiRepository) : base(playerRepository)
 		{
 			_playerRepository = playerRepository;
-			_mojangApiRepository = mojangApiRepository;
+			_mojangApiService = new MojangApiService(mojangApiRepository);
 		}
 
 		public new List<Player> GetAll(bool includeChilderen = false)
@@ -44,8 +46,6 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 
 		public KeyValuePair<bool, Player> UpdateName(Player player, TimeSpan? requiredWait = null)
 		{
-			return new KeyValuePair<bool, Player>(false, player);
-#warning disabled function no clue why it doesnt work????
 			if (requiredWait == null) requiredWait = TimeSpan.FromHours(24);
 
 			if (DateTime.Now - player.LastNameCheck > requiredWait)
@@ -53,7 +53,7 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 				string? newName = null;
 				try
 				{
-					newName = _mojangApiRepository.GetNameByMcUuid(player.McUuid).Result;
+					newName = _mojangApiService.GetNameByMcUuid(player.McUuid).Result;
 				}
 				catch (Exception e)
 				{

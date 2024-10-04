@@ -1,0 +1,31 @@
+.transition {
+    transition: all 0.3s ease, color 0.3s ease;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    body.bg-light {
+        background-color: #f8f9fa;
+    }
+
+    body.bg-dark {
+        background-color: #343a40;
+    }
+
+.bg-light .text-dark {
+    color: #000;
+}
+
+.bg-dark .text-light {
+    color: #fff;
+}
+
+.table-light {
+    background-color: #fff;
+}
+
+.table-dark {
+    background-color: #495057;
+}

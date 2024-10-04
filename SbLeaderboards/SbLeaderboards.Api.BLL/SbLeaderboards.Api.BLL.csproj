@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SbLeaderboards.Resources\SbLeaderboards.Resources.csproj" />
+  </ItemGroup>
+
 </Project>

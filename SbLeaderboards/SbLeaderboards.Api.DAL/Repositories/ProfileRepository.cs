@@ -7,8 +7,6 @@ namespace SbLeaderboards.Api.DAL.Repositories
 {
 	public class ProfileRepository : DirectDbRepository<Profile>, IProfileRepository
 	{
-		public ProfileRepository(SbLeaderboardsContext context) : base(context)
-		{
-		}
+		public ProfileRepository(SbLeaderboardsContext context) : base(context) { }
 	}
 }

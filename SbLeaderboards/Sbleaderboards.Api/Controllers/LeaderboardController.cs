@@ -29,7 +29,7 @@ namespace SbLeaderboards.Api.Controllers
 
 				if (leaderboard == null || leaderboard.Count == 0) return NotFound();
 
-				return Ok(leaderboard);
+				return Ok(leaderboard); 
 			}
 			catch (Exception)
 			{

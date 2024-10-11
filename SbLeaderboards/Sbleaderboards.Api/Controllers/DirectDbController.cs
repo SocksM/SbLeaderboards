@@ -20,8 +20,9 @@ namespace SbLeaderboards.Api.Controllers
 		}
 
 		[HttpGet]
-		public IActionResult GetAll(bool includeChilderen = false)
+		public IActionResult GetAll(bool includeChilderen = false, int page = 0)
 		{
+			int maxEntries = 100;
 			try
 			{
 				List<E> entity = _directDbService.GetAll(includeChilderen);

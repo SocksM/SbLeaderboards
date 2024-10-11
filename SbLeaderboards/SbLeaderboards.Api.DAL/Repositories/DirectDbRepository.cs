@@ -37,7 +37,6 @@ namespace SbLeaderboards.Presentation.DAL.Repositories
 				case false:
 					return _dbSet.IgnoreAutoIncludes().ToList();
 			}
-
 		}
 
 		public E GetById(int id, bool includeChilderen = true)

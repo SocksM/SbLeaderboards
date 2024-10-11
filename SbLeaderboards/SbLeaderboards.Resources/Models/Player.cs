@@ -1,4 +1,6 @@
-﻿namespace SbLeaderboards.Resources.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SbLeaderboards.Resources.Models
 {
 	public class Player : Entity
 	{

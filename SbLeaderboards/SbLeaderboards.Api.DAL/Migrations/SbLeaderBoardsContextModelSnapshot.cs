@@ -42,7 +42,7 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Players");
+                    b.ToTable("Players", (string)null);
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Profile", b =>
@@ -69,7 +69,7 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
                     b.HasIndex("PlayerId");
 
-                    b.ToTable("Profiles");
+                    b.ToTable("Profiles", (string)null);
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Stats", b =>
@@ -144,7 +144,7 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
                     b.HasIndex("ProfileId");
 
-                    b.ToTable("Stats");
+                    b.ToTable("Stats", (string)null);
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Profile", b =>

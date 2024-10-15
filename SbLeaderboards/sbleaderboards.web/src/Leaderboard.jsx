@@ -1,20 +1,19 @@
 ﻿import { useState, useEffect } from "react";
 import { Table, Container } from "react-bootstrap";
 import { useNightMode } from "./NightModeContext";
-import LeaderboardTableHeader from "./LeaderboardTableHeader"; // Import the component
+import LeaderboardTableHeader from "./LeaderboardTableHeader";
+import { Link } from "react-router-dom"; // Import Link
 
 function Leaderboard() {
     const [leaderboard, setLeaderboard] = useState([]);
-    const [sortKey, setSortKey] = useState(""); // Keeps track of which exp value to sort by
-    const [isAscending, setIsAscending] = useState(true); // Track sorting order
-    const { isDarkMode } = useNightMode(); // Access dark mode state from context
+    const [sortKey, setSortKey] = useState("");
+    const [isAscending, setIsAscending] = useState(true);
+    const { isDarkMode } = useNightMode();
 
     useEffect(() => {
-        // Fetch leaderboard data from the API
         fetch("https://localhost:7073/api/Leaderboard")
             .then((response) => response.json())
             .then((data) => {
-                // Convert the object to an array to make it easier to handle sorting
                 const formattedData = Object.keys(data).map((key) => ({
                     name: key,
                     ...data[key],
@@ -25,20 +24,14 @@ function Leaderboard() {
     }, []);
 
     const handleSort = (key) => {
-        const sortedData = [...leaderboard].sort((a, b) => {
-            if (isAscending) {
-                return a[key] - b[key];
-            } else {
-                return b[key] - a[key];
-            }
-        });
+        const sortedData = [...leaderboard].sort((a, b) => (isAscending ? a[key] - b[key] : b[key] - a[key]));
         setIsAscending(!isAscending);
         setSortKey(key);
         setLeaderboard(sortedData);
     };
 
     const formatSkyblockExp = (exp) => {
-        return (exp / 100).toFixed(2); // Divide by 100 and show 2 decimal points
+        return (exp / 100).toFixed(2);
     };
 
     const expTypes = [
@@ -50,7 +43,7 @@ function Leaderboard() {
     return (
         <Container className={`mt-4 transition ${isDarkMode ? "bg-dark text-light" : "bg-light text-dark"} w-100`}>
             <Table striped hover responsive className={`transition ${isDarkMode ? "table-dark" : "table-light"}`}>
-                <thead className='w-100'>
+                <thead className="w-100">
                     <tr>
                         <th>Name</th>
                         {expTypes.map((expType) => (
@@ -68,7 +61,9 @@ function Leaderboard() {
                 <tbody>
                     {leaderboard.map((player) => (
                         <tr key={player.profileId}>
-                            <td>{player.name}</td>
+                            <td>
+                                <Link to={`/Player/${player.profileId}`}>{player.name}</Link> {/* Link to player page */}
+                            </td>
                             <td>{formatSkyblockExp(player.skyblockExp)}</td>
                             <td>{player.tamingExp}</td>
                             <td>{player.miningExp}</td>

@@ -1,6 +1,6 @@
 import "react";
 import { Form } from "react-bootstrap"; // Import Form for the toggle switch
-import { useNightMode } from "./NightModeContext"; // Use the NightMode context
+import { useNightMode } from "../Provider/NightModeContext"; // Use the NightMode context
 
 function Header() {
     const { isDarkMode, toggleDarkMode } = useNightMode(); // Access dark mode state and toggle function

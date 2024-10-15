@@ -6,6 +6,7 @@ using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Api.DAL.Repositories;
 using SbLeaderboards.Resources.Enums;
 using SbLeaderboards.Resources.Models;
+using System.Dynamic;
 
 namespace SbLeaderboards.Api.Controllers
 {
@@ -25,7 +26,7 @@ namespace SbLeaderboards.Api.Controllers
 		{
 			try
 			{
-				Dictionary<string, Stats> leaderboard = _leaderboardService.Get(statType);
+				List<dynamic> leaderboard = _leaderboardService.Get(statType);
 
 				if (leaderboard == null || leaderboard.Count == 0) return NotFound();
 

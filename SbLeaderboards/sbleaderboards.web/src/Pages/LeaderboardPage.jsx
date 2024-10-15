@@ -1,7 +1,7 @@
 ﻿import { useState, useEffect } from "react";
 import { Table, Container } from "react-bootstrap";
-import { useNightMode } from "./NightModeContext";
-import LeaderboardTableHeader from "./LeaderboardTableHeader";
+import { useNightMode } from "../Provider/NightModeContext";
+import LeaderboardTableHeader from "../Compoments/LeaderboardTableHeader";
 import { Link } from "react-router-dom"; // Import Link
 
 function Leaderboard() {
@@ -60,28 +60,30 @@ function Leaderboard() {
                 </thead>
                 <tbody>
                     {leaderboard.map((player) => (
-                        <tr key={player.profileId}>
+                        <tr key={player.mcUuid}>
                             <td>
-                                <Link to={`/Player/${player.profileId}`}>{player.name}</Link> {/* Link to player page */}
+                                <Link to={`/Player/${player.mcUuid}`}>
+                                    {`${player.name} (${player.profileName})`}
+                                </Link>
                             </td>
-                            <td>{formatSkyblockExp(player.skyblockExp)}</td>
-                            <td>{player.tamingExp}</td>
-                            <td>{player.miningExp}</td>
-                            <td>{player.foragingExp}</td>
-                            <td>{player.enchantingExp}</td>
-                            <td>{player.carpentryExp}</td>
-                            <td>{player.farmingExp}</td>
-                            <td>{player.combatExp}</td>
-                            <td>{player.fishingExp}</td>
-                            <td>{player.alchemyExp}</td>
-                            <td>{player.runecraftingExp}</td>
-                            <td>{player.socialExp}</td>
-                            <td>{player.catacombsExp}</td>
-                            <td>{player.healerExp}</td>
-                            <td>{player.archerExp}</td>
-                            <td>{player.tankExp}</td>
-                            <td>{player.berserkerExp}</td>
-                            <td>{player.mageExp}</td>
+                            <td>{formatSkyblockExp(player.stats.skyblockExp)}</td>
+                            <td>{player.stats.tamingExp}</td>
+                            <td>{player.stats.miningExp}</td>
+                            <td>{player.stats.foragingExp}</td>
+                            <td>{player.stats.enchantingExp}</td>
+                            <td>{player.stats.carpentryExp}</td>
+                            <td>{player.stats.farmingExp}</td>
+                            <td>{player.stats.combatExp}</td>
+                            <td>{player.stats.fishingExp}</td>
+                            <td>{player.stats.alchemyExp}</td>
+                            <td>{player.stats.runecraftingExp}</td>
+                            <td>{player.stats.socialExp}</td>
+                            <td>{player.stats.catacombsExp}</td>
+                            <td>{player.stats.healerExp}</td>
+                            <td>{player.stats.archerExp}</td>
+                            <td>{player.stats.tankExp}</td>
+                            <td>{player.stats.berserkerExp}</td>
+                            <td>{player.stats.mageExp}</td>
                         </tr>
                     ))}
                 </tbody>

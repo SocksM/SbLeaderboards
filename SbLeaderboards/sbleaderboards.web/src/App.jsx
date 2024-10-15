@@ -1,22 +1,23 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import "react";
 import "./styles.css";
-import CombinedProvider from "./CombinedProvider";
-import Leaderboard from "./Leaderboard";
-import Header from "./Header";
-import PlayerProfile from "./PlayerProfile"; // Import the player profile page component
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Import Router
+import CombinedProvider from "./Provider/CombinedProvider";
+import Leaderboard from "./Pages/LeaderboardPage";
+import Header from "./Compoments/Header";
+import PlayerPage from './Pages/PlayerPage'; // Import the new PlayerPage component
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
     return (
-        <CombinedProvider>
-            <Router>
+        <Router>
+            <CombinedProvider>
                 <Header />
                 <Routes>
                     <Route path="/" element={<Leaderboard />} />
-                    <Route path="/Player/:playerId" element={<PlayerProfile />} /> {/* Dynamic route */}
+                    <Route path="/Player/:playerId" element={<PlayerPage />} /> {/* Player page route */}
                 </Routes>
-            </Router>
-        </CombinedProvider>
+            </CombinedProvider>
+        </Router>
     );
 }
 

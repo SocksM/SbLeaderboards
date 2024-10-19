@@ -1,8 +1,8 @@
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using SbLeaderboards.Api.DAL.Configuration;
 using SbLeaderboards.Resources.Interfaces.IApiRepository;
 using SbLeaderboards.Resources.Models.HypixelApiResponseJson.V2_Skyblock_ProfileEndpoint;
-using System.Reflection.Metadata.Ecma335;
+using SbLeaderboards.Resources.Models.HypixelApiResponseJson.V2_Skyblock_ProfilesEndpoint;
 
 namespace SbLeaderboards.Api.DAL.ApiRepositories
 {
@@ -11,22 +11,25 @@ namespace SbLeaderboards.Api.DAL.ApiRepositories
 		public readonly string _apiBaseUrl = "https://api.hypixel.net/v2/skyblock";
 		private readonly string _hypixelApiKey = string.Empty;
 
-        public HypixelApiRepository(string hypixelApiKey)
+        public HypixelApiRepository(AppConfiguration appConfiguration)
         {
-            _hypixelApiKey = hypixelApiKey;
+            _hypixelApiKey = appConfiguration.GetApiKey("Hypixel");
         }
 
-		public async Task<Profile?> GetProfileByProfileUuid(Guid profileUuid)
+		public async Task<profile> GetProfileByProfileUuid(Guid profileUuid)
 		{
-			Root_Skyblock_Profile__ProfileUuid root = JsonConvert.DeserializeObject<Root_Skyblock_Profile__ProfileUuid>(Get($"{_apiBaseUrl}/profile?key={_hypixelApiKey}&profile={profileUuid}").ToString());
+			Root_Skyblock_Profile__ProfileUuid root = JsonConvert.DeserializeObject<Root_Skyblock_Profile__ProfileUuid>((await Get($"{_apiBaseUrl}/profile?key={_hypixelApiKey}&profile={profileUuid}")).ToString());
 			if (root == null) return null;
 			if (root.profile == null) return null;
 			return root.profile;
 		}
 
-		public async Task<List<Profile>> GetProfilesByMcUuid(Guid mcUuid)
+		public async Task<List<profile>> GetProfilesByMcUuid(Guid mcUuid)
 		{
-			throw new NotImplementedException();
+			Root_Skyblock_Profiles__McUuid root = JsonConvert.DeserializeObject<Root_Skyblock_Profiles__McUuid>((await Get($"{_apiBaseUrl}/profiles?key={_hypixelApiKey}&uuid={mcUuid}")).ToString());
+			if (root == null) return null;
+			if (root.profiles == null) return null;
+			return root.profiles;
 		}
 	}
 }

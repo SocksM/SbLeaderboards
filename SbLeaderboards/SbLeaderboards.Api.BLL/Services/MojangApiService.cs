@@ -10,8 +10,8 @@ namespace SbLeaderboards.Api.BLL.Services
 			_mojangApiRepository = mojangApiRepository;
         }
 
-		public async Task<Guid> GetMcUuidByName(string name) => await _mojangApiRepository.GetMcUuidByName(name);
+		public Guid GetMcUuidByName(string name) => _mojangApiRepository.GetMcUuidByName(name).Result;
 
-		public async Task<string> GetNameByMcUuid(Guid uuid) => await _mojangApiRepository.GetNameByMcUuid(uuid);
+		public string GetNameByMcUuid(Guid uuid) => _mojangApiRepository.GetNameByMcUuid(uuid).Result;
 	}
 }

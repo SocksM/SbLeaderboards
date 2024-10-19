@@ -28,6 +28,10 @@ namespace SbLeaderboards.Api.DAL.Context
 				.Navigation(p => p.Profiles)
 				.AutoInclude();
 
+			modelBuilder.Entity<Player>()
+				.Property(p => p.Id)
+				.ValueGeneratedOnAdd();
+
 			modelBuilder.Entity<Profile>()
 				.Navigation(p => p.Stats)
 				.AutoInclude();

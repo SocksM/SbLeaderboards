@@ -4,6 +4,6 @@ namespace SbLeaderboards.Resources.Interfaces.IApiRepository
 {
 	public interface IApiRepository
 	{
-		protected Task<JObject> Get(string apiUrl);
+		protected Task<string> Get(string apiUrl);
 	}
 }

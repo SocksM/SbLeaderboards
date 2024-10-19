@@ -4,7 +4,7 @@ namespace SbLeaderboards.Resources.Interfaces.IApiRepository
 {
     public interface IHypixelApiRepository
     {
-        public Task<List<Profile>> GetProfilesByMcUuid(Guid mcUuid);
-        public Task<Profile> GetProfileByProfileUuid(Guid profileUuid);
+        public Task<List<profile>> GetProfilesByMcUuid(Guid mcUuid);
+        public Task<profile> GetProfileByProfileUuid(Guid profileUuid);
     }
 }

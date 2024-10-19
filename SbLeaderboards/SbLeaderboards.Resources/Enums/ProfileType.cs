@@ -4,6 +4,7 @@ namespace SbLeaderboards.Resources.Enums
     {
         Regular = 0,
         Ironman = 1,
-        Stranded = 2
+        Bingo = 2,
+        Stranded = 3
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SbLeaderboards.Api.DAL.Context;
 
@@ -11,9 +12,11 @@ using SbLeaderboards.Api.DAL.Context;
 namespace SbLeaderboards.Api.DAL.Migrations
 {
     [DbContext(typeof(SbLeaderboardsContext))]
-    partial class SbLeaderboardsContextModelSnapshot : ModelSnapshot
+    [Migration("20241018114338_added_laststatupdatecollumn")]
+    partial class added_laststatupdatecollumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,7 +48,7 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Players", (string)null);
+                    b.ToTable("Players");
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Profile", b =>
@@ -72,7 +75,7 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
                     b.HasIndex("PlayerId");
 
-                    b.ToTable("Profiles", (string)null);
+                    b.ToTable("Profiles");
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Stats", b =>
@@ -147,7 +150,7 @@ namespace SbLeaderboards.Api.DAL.Migrations
 
                     b.HasIndex("ProfileId");
 
-                    b.ToTable("Stats", (string)null);
+                    b.ToTable("Stats");
                 });
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Profile", b =>

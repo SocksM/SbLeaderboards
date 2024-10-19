@@ -12,15 +12,15 @@ namespace SbLeaderboards.Api.BLL.Services
 		protected readonly ProfileService _profileService;
 		protected readonly PlayerService _playerService;
 
-		public LeaderboardService(IProfileRepository profileRepository, IPlayerRepository playerRepository, IMojangApiRepository mojangApiRepository)
+		public LeaderboardService(IPlayerRepository playerRepository, IProfileRepository profileRepository, IMojangApiRepository mojangApiRepository, IHypixelApiRepository hypixelApiRepository)
 		{
 			_profileService = new ProfileService(profileRepository);
-			_playerService = new PlayerService(playerRepository, mojangApiRepository);
+			_playerService = new PlayerService(playerRepository, mojangApiRepository, hypixelApiRepository);
 		}
 
-		public List<dynamic> Get(StatType statType)
+		public List<dynamic> Get(StatType statType, bool descending)
 		{
-			List<Profile> profiles = _profileService.GetSortedProfilesByLatestStatsWithLatestStatOnly(statType);
+			List<Profile> profiles = _profileService.GetSortedProfilesByLatestStatsWithLatestStatOnly(statType, descending);
 			List<dynamic> output = new List<dynamic>();
 
 			foreach (Profile profile in profiles)
@@ -38,16 +38,6 @@ namespace SbLeaderboards.Api.BLL.Services
 			}
 
 			return output;
-
-			
-			//Dictionary<KeyValuePair<string, Guid>, Stats> dict = new Dictionary<KeyValuePair<string, Guid>, Stats>();
-			//foreach (Profile profile in profiles)
-			//{
-			//	Player player = _playerService.GetById(profile.PlayerId, false);
-
-			//	dict.Add(new KeyValuePair<string, Guid>($"{player.Name} ({profile.CuteName.ToString()})", player.McUuid), profile.Stats.First());
-			//}
-			//return dict;
 		}
 	}
 }

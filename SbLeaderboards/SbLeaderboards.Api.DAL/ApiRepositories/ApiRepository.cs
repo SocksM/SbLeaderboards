@@ -1,13 +1,12 @@
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using SbLeaderboards.Resources.Interfaces.IApiRepository;
 
 namespace SbLeaderboards.Api.DAL.ApiRepositories
 {
 	public class ApiRepository : IApiRepository
 	{
-		protected async Task<JObject> Get(string apiUrl)
+		protected async Task<string> Get(string apiUrl)
 		{
 			using (HttpClient client = new HttpClient())
 			{
@@ -18,7 +17,7 @@ namespace SbLeaderboards.Api.DAL.ApiRepositories
 				{
 					try
 					{
-						return JObject.Parse(content);
+						return content;
 					}
 					catch (JsonReaderException ex)
 					{
@@ -31,6 +30,6 @@ namespace SbLeaderboards.Api.DAL.ApiRepositories
 			}
 		}
 
-		Task<JObject> IApiRepository.Get(string apiUrl) => Get(apiUrl);
+		Task<string> IApiRepository.Get(string apiUrl) => Get(apiUrl);
 	}
 }

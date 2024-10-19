@@ -12,8 +12,8 @@ namespace SbLeaderboards.Api.BLL.Services
             _hypixelApiRepository = hypixelApiRepository;
         }
 
-		public async Task<Profile> GetProfileByProfileUuid(Guid profileUuid) => await _hypixelApiRepository.GetProfileByProfileUuid(profileUuid);
+		public profile GetProfileByProfileUuid(Guid profileUuid) => _hypixelApiRepository.GetProfileByProfileUuid(profileUuid).Result;
 
-        public async Task<List<Profile>> GetProfilesByMcUuid(Guid mcUuid) => await _hypixelApiRepository.GetProfilesByMcUuid(mcUuid);
+        public List<profile> GetProfilesByMcUuid(Guid mcUuid) => _hypixelApiRepository.GetProfilesByMcUuid(mcUuid).Result;
 	}
 }

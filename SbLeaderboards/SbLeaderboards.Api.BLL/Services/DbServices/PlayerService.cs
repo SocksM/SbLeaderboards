@@ -1,7 +1,11 @@
 ﻿using SbLeaderboards.Resources.Interfaces.IApiRepository;
 using SbLeaderboards.Resources.Interfaces.IRepository;
 using SbLeaderboards.Resources.Models;
+using SbLeaderboards.Resources.Models.HypixelApiResponseJson.V2_Skyblock_ProfileEndpoint;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
+using System.Numerics;
+using System.Reflection.Metadata.Ecma335;
 
 namespace SbLeaderboards.Api.BLL.Services.DbServices
 {
@@ -9,12 +13,29 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 	{
 		private readonly IPlayerRepository _playerRepository;
 		private readonly MojangApiService _mojangApiService;
+		private readonly HypixelApiService _hypixelApiService;
 
 
-		public PlayerService(IPlayerRepository playerRepository, IMojangApiRepository mojangApiRepository) : base(playerRepository)
+
+		public PlayerService(IPlayerRepository playerRepository, IMojangApiRepository mojangApiRepository, IHypixelApiRepository hypixelApiRepository) : base(playerRepository)
 		{
 			_playerRepository = playerRepository;
 			_mojangApiService = new MojangApiService(mojangApiRepository);
+			_hypixelApiService = new HypixelApiService(hypixelApiRepository);
+		}
+
+		public Player StartTracking(Guid mcUuid)
+		{
+			Player newPlayer = new Player
+			{
+				Name = "Unkown",
+				McUuid = mcUuid,
+				LastNameCheck = DateTime.MinValue,
+				LastStatUpdate = DateTime.MinValue,
+				Profiles = new List<Profile>()
+			};
+			newPlayer = UpdateFullPlayer(newPlayer, true);
+			return newPlayer;
 		}
 
 		public new List<Player> GetAll(bool includeChilderen = false)
@@ -22,8 +43,7 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 			List<Player> players = _playerRepository.GetAll(includeChilderen);
 			for (int i = 0; i < players.Count; i++)
 			{
-				KeyValuePair<bool, Player> result = UpdateName(players[i]);
-				if (result.Key) players[i] = result.Value;
+				players[i] = UpdateFullPlayer(players[i], includeChilderen);
 			}
 			return players;
 		}
@@ -31,29 +51,41 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 		public Player GetByMcUuid(Guid mcUuid, bool includeChilderen = true)
 		{
 			Player player = _playerRepository.GetByMcUuid(mcUuid, includeChilderen);
-			KeyValuePair<bool, Player> result = UpdateName(player);
-			if (result.Key) player = result.Value;
+			player = UpdateFullPlayer(player, includeChilderen);
 			return player;
 		}
 
 		public new Player GetById(int id, bool includeChilderen = true)
 		{
 			Player player = _playerRepository.GetById(id, includeChilderen);
-			KeyValuePair<bool, Player> result = UpdateName(player);
-			if (result.Key) player = result.Value;
+			player = UpdateFullPlayer(player, includeChilderen);
+			return player;
+		}
+
+		private Player UpdateFullPlayer(Player player, bool areAllChilderenIncluded = false)
+		{
+			if (player == null) return player;
+
+			KeyValuePair<bool, Player> result0 = UpdateName(player);
+			if (result0.Key) player = result0.Value;
+			if (areAllChilderenIncluded)
+			{
+				KeyValuePair<bool, Player> result1 = UpdateStats(player);
+				if (result1.Key) player = result1.Value;
+			}
 			return player;
 		}
 
 		public KeyValuePair<bool, Player> UpdateName(Player player, TimeSpan? requiredWait = null)
 		{
-			if (requiredWait == null) requiredWait = TimeSpan.FromHours(24);
+			if (requiredWait == null) requiredWait = TimeSpan.FromHours(3);
 
 			if (DateTime.Now - player.LastNameCheck > requiredWait)
 			{
 				string? newName = null;
 				try
 				{
-					newName = _mojangApiService.GetNameByMcUuid(player.McUuid).Result;
+					newName = _mojangApiService.GetNameByMcUuid(player.McUuid);
 				}
 				catch (Exception e)
 				{
@@ -68,6 +100,51 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 					return new KeyValuePair<bool, Player>(true, player);
 				}
 			}
+			return new KeyValuePair<bool, Player>(false, player);
+		}
+
+		public KeyValuePair<bool, Player> UpdateStats(Player player)
+		{
+			TimeSpan requiredWait = TimeSpan.FromHours(48);
+
+			if (DateTime.Now - player.LastStatUpdate > requiredWait)
+			{ // add resetting the datetime
+				List<profile> profiles = _hypixelApiService.GetProfilesByMcUuid(player.McUuid);
+				foreach (profile profile in profiles)
+				{
+					foreach (KeyValuePair<string, member> memberKeyValue in profile.members)
+					{
+#warning could still add saving for other members retrieved here
+						if (Guid.TryParse(memberKeyValue.Key, out Guid memberGuid) && memberGuid == player.McUuid)
+						{
+							Profile? dbProfile = player.Profiles.Where(p => Guid.Parse(profile.profile_id) == p.ProfileId).FirstOrDefault();
+							if (dbProfile != null)
+							{
+								dbProfile.Stats.Add(new Stats((int)dbProfile.Id, memberKeyValue.Value, DateTime.Now));
+							}
+							else
+							{
+								Profile newProfile = new Profile
+								{
+									PlayerId = (int)player.Id,
+									Type = (Resources.Enums.ProfileType)EnumConversionService.ToProfileType(profile.game_mode),
+									CuteName = (Resources.Enums.ProfileCuteName)EnumConversionService.ToProfileCuteName(profile.cute_name),
+									ProfileId = Guid.Parse(profile.profile_id),
+									Stats = new List<Stats> {
+									new Stats(memberKeyValue.Value)
+									}
+
+								};
+								player.Profiles.Add(newProfile);
+							}
+						}
+					}
+				}
+				player.LastStatUpdate = DateTime.Now;
+				Update(player);
+				return new KeyValuePair<bool, Player>(true, player);
+			}
+
 			return new KeyValuePair<bool, Player>(false, player);
 		}
 	}

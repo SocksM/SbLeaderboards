@@ -11,7 +11,6 @@ export const NightModeProvider = ({ children }) => {
         setIsDarkMode((prevMode) => !prevMode);
     };
 
-    // Effect to set the body class based on dark mode
     useEffect(() => {
         if (isDarkMode) {
             document.body.classList.add("bg-dark");

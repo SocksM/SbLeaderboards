@@ -15,5 +15,9 @@ namespace SbLeaderboards.Api.DAL.Configuration
 		{
 			return _configuration.GetConnectionString("DevConnection");
 		}
+		public string GetApiKey(string type)
+		{
+			return _configuration.GetConnectionString($"{type}ApiKey");
+		}
 	}
 }

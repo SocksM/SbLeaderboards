@@ -2,5 +2,6 @@
 {
 	public class mage
 	{
+		public double experience { get; set; }
 	}
 }

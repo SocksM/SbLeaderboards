@@ -4,7 +4,7 @@ import "./styles.css";
 import CombinedProvider from "./Provider/CombinedProvider";
 import Leaderboard from "./Pages/LeaderboardPage";
 import Header from "./Compoments/Header";
-import PlayerPage from './Pages/PlayerPage'; // Import the new PlayerPage component
+import Playerpage from './Pages/PlayerPage';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Leaderboard />} />
-                    <Route path="/Player/:playerId" element={<PlayerPage />} /> {/* Player page route */}
+                    <Route path="/Player/:playerId" element={<Playerpage />} /> 
                 </Routes>
             </CombinedProvider>
         </Router>

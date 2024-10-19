@@ -2,6 +2,6 @@
 {
 	public class berserk
 	{
-		public double expeience { get; set; }
+		public double experience { get; set; }
 	}
 }

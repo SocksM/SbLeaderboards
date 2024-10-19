@@ -30,7 +30,7 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 			return profilesWithLatestStatOnly;
 		}
 
-		public List<Profile> GetSortedProfilesByLatestStatsWithLatestStatOnly(StatType statType)
+		public List<Profile> GetSortedProfilesByLatestStatsWithLatestStatOnly(StatType statType, bool descending)
 		{
 			List<Profile> profiles = GetAll(true);
 			// Get profiles with only the latest stats per ProfileId
@@ -48,9 +48,9 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 				.Where(p => p.Stats != null && p.Stats.Count > 0)
 				.ToList();
 
-			List<Profile> sortedProfilesWithLatestStatOnly = profilesWithLatestStatOnly.OrderByDescending(p => StatsService.GetStatValueByType(p.Stats.First(), statType)).ToList();
-
-			return sortedProfilesWithLatestStatOnly;
+			return descending
+				? profilesWithLatestStatOnly.OrderByDescending(p => StatsService.GetStatValueByType(p.Stats.First(), statType)).ToList()
+				: profilesWithLatestStatOnly.OrderBy(p => StatsService.GetStatValueByType(p.Stats.First(), statType)).ToList();
 		}
 	}
 }

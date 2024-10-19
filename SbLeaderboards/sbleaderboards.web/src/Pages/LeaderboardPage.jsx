@@ -1,44 +1,69 @@
 ﻿import { useState, useEffect } from "react";
 import { Table, Container } from "react-bootstrap";
 import { useNightMode } from "../Provider/NightModeContext";
-import LeaderboardTableHeader from "../Compoments/LeaderboardTableHeader";
-import { Link } from "react-router-dom"; // Import Link
+import LeaderboardTableHeader from "../Compoments/LeaderboardTableHeader"
+import { Link } from "react-router-dom";
 
 function Leaderboard() {
     const [leaderboard, setLeaderboard] = useState([]);
-    const [sortKey, setSortKey] = useState("");
-    const [isAscending, setIsAscending] = useState(true);
+    const [sortKey, setSortKey] = useState("skyblockExp"); // Default to skyblockExp
+    const [isDescending, setIsDescending] = useState(true);
     const { isDarkMode } = useNightMode();
 
+    const statTypes = [
+        { name: "skyblockExp", id: 0 },
+        { name: "tamingExp", id: 1 },
+        { name: "miningExp", id: 2 },
+        { name: "foragingExp", id: 3 },
+        { name: "enchantingExp", id: 4 },
+        { name: "carpentryExp", id: 5 },
+        { name: "farmingExp", id: 6 },
+        { name: "combatExp", id: 7 },
+        { name: "fishingExp", id: 8 },
+        { name: "alchemyExp", id: 9 },
+        { name: "runecraftingExp", id: 10 },
+        { name: "socialExp", id: 11 },
+        { name: "catacombsExp", id: 12 },
+        { name: "healerExp", id: 13 },
+        { name: "archerExp", id: 14 },
+        { name: "tankExp", id: 15 },
+        { name: "berserkerExp", id: 16 },
+        { name: "mageExp", id: 17 }
+    ];
+
     useEffect(() => {
-        fetch("https://localhost:7073/api/Leaderboard")
+        fetchLeaderboard(sortKey, isDescending);
+    }, [sortKey, isDescending]);
+
+    const fetchLeaderboard = (key, descending) => {
+        const sortOrder = descending ? "true" : "false";
+        const statType = statTypes.find((stat) => stat.name === key)?.id;
+
+        if (statType === undefined) {
+            console.error("Invalid statType");
+            return;
+        }
+
+        fetch(`https://localhost:7073/api/Leaderboard?statType=${statType}&descending=${sortOrder}`)
             .then((response) => response.json())
             .then((data) => {
-                const formattedData = Object.keys(data).map((key) => ({
-                    name: key,
-                    ...data[key],
-                }));
-                setLeaderboard(formattedData);
+                setLeaderboard(data);
             })
             .catch((error) => console.error("Error fetching leaderboard:", error));
-    }, []);
+    };
 
     const handleSort = (key) => {
-        const sortedData = [...leaderboard].sort((a, b) => (isAscending ? a[key] - b[key] : b[key] - a[key]));
-        setIsAscending(!isAscending);
-        setSortKey(key);
-        setLeaderboard(sortedData);
+        if (sortKey === key) {
+            setIsDescending(!isDescending); // Toggle sort direction if sorting by the same key
+        } else {
+            setSortKey(key); // Change sort key and reset to descending
+            setIsDescending(true);
+        }
     };
 
     const formatSkyblockExp = (exp) => {
         return (exp / 100).toFixed(2);
     };
-
-    const expTypes = [
-        "skyblockExp", "tamingExp", "miningExp", "foragingExp", "enchantingExp", "carpentryExp",
-        "farmingExp", "combatExp", "fishingExp", "alchemyExp", "runecraftingExp", "socialExp",
-        "catacombsExp", "healerExp", "archerExp", "tankExp", "berserkerExp", "mageExp"
-    ];
 
     return (
         <Container className={`mt-4 transition ${isDarkMode ? "bg-dark text-light" : "bg-light text-dark"} w-100`}>
@@ -46,12 +71,12 @@ function Leaderboard() {
                 <thead className="w-100">
                     <tr>
                         <th>Name</th>
-                        {expTypes.map((expType) => (
+                        {statTypes.map((expType) => (
                             <LeaderboardTableHeader
-                                key={expType}
-                                expType={expType}
+                                key={expType.name}
+                                expType={expType.name}
                                 sortKey={sortKey}
-                                isAscending={isAscending}
+                                isDescending={isDescending}
                                 isDarkMode={isDarkMode}
                                 handleSort={handleSort}
                             />
@@ -60,7 +85,7 @@ function Leaderboard() {
                 </thead>
                 <tbody>
                     {leaderboard.map((player) => (
-                        <tr key={player.mcUuid}>
+                        <tr key={player.mcUuid + player.profileName}>
                             <td>
                                 <Link to={`/Player/${player.mcUuid}`}>
                                     {`${player.name} (${player.profileName})`}

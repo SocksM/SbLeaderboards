@@ -26,16 +26,21 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 
 		public Player StartTracking(Guid mcUuid)
 		{
-			Player newPlayer = new Player
+			Player? player = _playerRepository.GetByMcUuid(mcUuid, true);
+			if (player == null)
 			{
-				Name = "Unkown",
-				McUuid = mcUuid,
-				LastNameCheck = DateTime.MinValue,
-				LastStatUpdate = DateTime.MinValue,
-				Profiles = new List<Profile>()
-			};
-			newPlayer = UpdateFullPlayer(newPlayer, true);
-			return newPlayer;
+				Player newPlayer = new Player
+				{
+					Name = "Unkown",
+					McUuid = mcUuid,
+					LastNameCheck = DateTime.MinValue,
+					LastStatUpdate = DateTime.MinValue,
+					Profiles = new List<Profile>()
+				};
+				newPlayer = UpdateFullPlayer(newPlayer, true);
+				return newPlayer;
+			}
+			return player;
 		}
 
 		public new List<Player> GetAll(bool includeChilderen = false)

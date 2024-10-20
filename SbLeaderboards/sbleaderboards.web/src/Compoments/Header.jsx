@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Form, Button } from "react-bootstrap"; 
 import { useNightMode } from "../Provider/NightModeContext";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import '../styles.css'
 
 function Header() {
 	const { isDarkMode, toggleDarkMode } = useNightMode();
@@ -35,11 +37,15 @@ function Header() {
 
 	return (
 		<header className={`transition d-flex justify-content-between align-items-center p-3 ${isDarkMode ? "bg-dark text-light" : "bg-light text-dark"}`}>
-			<h2>Hypixel Skyblock Leaderboards</h2>
+
+			<Link to={`/`} className="link-text">
+				<h2>Hypixel Skyblock Leaderboards</h2>
+			</Link>
+			
 			<Form inline onSubmit={handleSearch} className="d-flex">
 				<Form.Control
 					type="text"
-					placeholder="Search by player name or UUID"
+					placeholder="Search"
 					value={searchTerm}
 					onChange={(e) => setSearchTerm(e.target.value)} 
 					className="me-2"

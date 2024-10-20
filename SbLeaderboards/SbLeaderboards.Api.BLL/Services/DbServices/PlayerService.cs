@@ -105,7 +105,7 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 
 		public KeyValuePair<bool, Player> UpdateStats(Player player)
 		{
-			TimeSpan requiredWait = TimeSpan.FromHours(48);
+			TimeSpan requiredWait = TimeSpan.FromHours(0);
 
 			if (DateTime.Now - player.LastStatUpdate > requiredWait)
 			{ // add resetting the datetime
@@ -120,13 +120,13 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 							Profile? dbProfile = player.Profiles.Where(p => Guid.Parse(profile.profile_id) == p.ProfileId).FirstOrDefault();
 							if (dbProfile != null)
 							{
-								dbProfile.Stats.Add(new Stats((int)dbProfile.Id, memberKeyValue.Value, DateTime.Now));
+								dbProfile.Stats.Add(new Stats(dbProfile.Id, memberKeyValue.Value, DateTime.Now));
 							}
 							else
 							{
 								Profile newProfile = new Profile
 								{
-									PlayerId = (int)player.Id,
+									PlayerId = player.Id,
 									Type = (Resources.Enums.ProfileType)EnumConversionService.ToProfileType(profile.game_mode),
 									CuteName = (Resources.Enums.ProfileCuteName)EnumConversionService.ToProfileCuteName(profile.cute_name),
 									ProfileId = Guid.Parse(profile.profile_id),

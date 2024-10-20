@@ -29,3 +29,8 @@ body {
 .table-dark {
     background-color: #495057;
 }
+
+.link-text {
+    color: inherit;
+    text-decoration: none;
+}

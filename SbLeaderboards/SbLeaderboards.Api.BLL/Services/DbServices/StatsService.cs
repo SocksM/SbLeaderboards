@@ -12,7 +12,7 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 			_statsRepository = statsRepository;
 		}
 
-		public static int GetStatValueByType(Stats stats, StatType statType)
+		public static long GetStatValueByType(Stats stats, StatType statType)
 		{
 			return statType switch
 			{

@@ -5,8 +5,9 @@ using SbLeaderboards.Api.DAL.Configuration;
 using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Api.DAL.Repositories;
 using SbLeaderboards.Resources.Enums;
+using System.Dynamic;
 
-namespace SbLeaderboards.Api.Controllers.DbControllers
+namespace SbLeaderboards.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -22,7 +23,7 @@ namespace SbLeaderboards.Api.Controllers.DbControllers
         }
 
         [HttpGet]
-        public IActionResult Get(StatType statType = StatType.SkyblockExp, bool descending = true)
+        public IActionResult Get(StatType statType = StatType.SkyblockExp, bool descending = true, int page = 0)
         {
             try
             {
@@ -30,7 +31,22 @@ namespace SbLeaderboards.Api.Controllers.DbControllers
 
                 if (leaderboard == null || leaderboard.Count == 0) return NotFound();
 
-                return Ok(leaderboard);
+                int pageSize = 50;
+                int totalCount = leaderboard.Count;
+                int totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
+
+                List<dynamic> paginatedLeaderboard = leaderboard
+                    .Skip(page * pageSize)
+                    .Take(pageSize)
+                    .ToList();
+
+                dynamic output = new ExpandoObject();
+                output.page = page;
+                output.totalPages = totalPages;
+                output.totalCount = totalCount;
+                output.leaderboard = paginatedLeaderboard;
+
+                return Ok(output);
             }
             catch (Exception)
             {

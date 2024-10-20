@@ -1,13 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Table, Container, Spinner } from 'react-bootstrap';
-import { Chart as ChartJS, registerables } from 'chart.js';
-import { Line } from 'react-chartjs-2';
 import { useNightMode } from '../Provider/NightModeContext';
 import { useProfileTypes } from '../Provider/ProfileTypeContext';
 import { useProfileCuteNames } from '../Provider/ProfileCuteNameContext';
-
-ChartJS.register(...registerables);
 
 function PlayerPage() {
     const { playerId } = useParams();
@@ -18,7 +14,6 @@ function PlayerPage() {
     const profileTypeLabels = useProfileTypes();
     const profileCuteNameLabels = useProfileCuteNames();
     const [isLoading, setIsLoading] = useState(true);
-    const chartRef = useRef(null);
 
     useEffect(() => {
         fetchPlayerData();
@@ -54,14 +49,6 @@ function PlayerPage() {
         setSelectedProfile(highestSkyblockProfile);
     };
 
-    useEffect(() => {
-        return () => {
-            if (chartRef.current) {
-                chartRef.current.destroy();
-            }
-        };
-    }, [selectedProfile]);
-
     const getRelevantStatsForProfile = (profile) => {
         const relevantStatKeys = [
             'skyblockExp', 'tamingExp', 'miningExp', 'foragingExp', 'enchantingExp',
@@ -74,32 +61,9 @@ function PlayerPage() {
             key: statKey,
             values: latestStats.map(stat => ({
                 timestamp: new Date(stat.timestamp).toLocaleString(),
-                value: stat[statKey] || 0 
+                value: stat[statKey] || 0
             }))
         }));
-    };
-
-    const renderStatGraphs = (profile) => {
-        const statsData = getRelevantStatsForProfile(profile);
-        return statsData.map(stat => {
-            const data = {
-                labels: stat.values.map(value => value.timestamp),
-                datasets: [{
-                    label: stat.key,
-                    data: stat.values.map(value => value.value),
-                    borderColor: isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)',
-                    backgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
-                    fill: true,
-                }]
-            };
-
-            return (
-                <div key={stat.key} className="mb-4">
-                    <h5>{stat.key.replace(/([A-Z])/g, ' $1')}</h5>
-                    <Line ref={chartRef} data={data} options={{ responsive: true }} />
-                </div>
-            );
-        });
     };
 
     return (
@@ -150,7 +114,6 @@ function PlayerPage() {
                                     ))}
                                 </tbody>
                             </Table>
-                                {/* {renderStatGraphs(selectedProfile)} */}
                         </>
                     )}
                 </>

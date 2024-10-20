@@ -5,6 +5,7 @@ using SbLeaderboards.Api.DAL.Context;
 using SbLeaderboards.Presentation.DAL.Repositories;
 using SbLeaderboards.Resources.Interfaces;
 using SbLeaderboards.Resources.Models;
+using System.Dynamic;
 
 namespace SbLeaderboards.Api.Controllers.DbControllers
 {
@@ -20,15 +21,30 @@ namespace SbLeaderboards.Api.Controllers.DbControllers
         }
 
         [HttpGet]
-        virtual public IActionResult GetAll(bool includeChilderen = false)
+        virtual public IActionResult GetAll(bool includeChilderen = false, int page = 0)
         {
             try
             {
-                List<E> entity = _directDbService.GetAll(includeChilderen);
+                List<E> entities = _directDbService.GetAll(includeChilderen);
 
-                if (entity.Count == 0) return NotFound();
+                if (entities.Count == 0) return NotFound();
 
-                return Ok(entity);
+				int pageSize = 50;
+				int totalCount = entities.Count;
+				int totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
+
+				List<E> paginatedEntities = entities
+					.Skip(page * pageSize)
+					.Take(pageSize)
+					.ToList();
+
+				dynamic output = new ExpandoObject();
+				output.page = page;
+				output.totalPages = totalPages;
+				output.totalCount = totalCount;
+				output.entities = paginatedEntities;
+
+				return Ok(output);
             }
             catch (Exception)
             {

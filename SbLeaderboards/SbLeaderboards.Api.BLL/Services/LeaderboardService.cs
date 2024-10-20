@@ -30,6 +30,7 @@ namespace SbLeaderboards.Api.BLL.Services
 				dynamic entry = new ExpandoObject();
 				
 				entry.name = player.Name;
+				entry.profileId = profile.ProfileId;
 				entry.profileName = profile.CuteName.ToString();
 				entry.mcUuid = player.McUuid;
 				entry.stats = profile.Stats.First();

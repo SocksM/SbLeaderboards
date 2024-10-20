@@ -25,19 +25,33 @@ namespace SbLeaderboards.Api
 			builder.Services.AddSingleton(configuration);
 			builder.Services.AddSingleton<AppConfiguration>();
 
-			var app = builder.Build();
+			builder.Services.AddCors(options =>
+			{
+				options.AddPolicy("AllowLocal",
+					policy =>
+					{
+						policy.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
+							  .AllowAnyMethod()
+							  .AllowAnyHeader();
+					});
+			});
 
-			// Configure CORS
-			app.UseCors(options => options
-				.AllowAnyOrigin()
-				.AllowAnyMethod()
-				.AllowAnyHeader());
+			var app = builder.Build();
 
 			// Configure the HTTP request pipeline.
 			if (app.Environment.IsDevelopment())
 			{
 				app.UseSwagger();
 				app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SbLeaderboards.Api v1"));
+
+				// Configure CORS
+				app.UseCors("AllowLocal");
+			}
+			else
+			{
+				// Configure CORS
+#warning Didn't setup CORS yet for deployment
+				app.UseCors();
 			}
 
 			app.UseHttpsRedirection();

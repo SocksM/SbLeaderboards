@@ -1,13 +1,15 @@
 ﻿import { useState, useEffect } from "react";
-import { Table, Container } from "react-bootstrap";
+import { Table, Container, Button } from "react-bootstrap";
 import { useNightMode } from "../Provider/NightModeContext";
 import LeaderboardTableHeader from "../Compoments/LeaderboardTableHeader"
 import { Link } from "react-router-dom";
 
 function Leaderboard() {
     const [leaderboard, setLeaderboard] = useState([]);
-    const [sortKey, setSortKey] = useState("skyblockExp"); // Default to skyblockExp
+    const [sortKey, setSortKey] = useState("skyblockExp");
     const [isDescending, setIsDescending] = useState(true);
+    const [page, setPage] = useState(0);
+    const [totalPages, setTotalPages] = useState(1);
     const { isDarkMode } = useNightMode();
 
     const statTypes = [
@@ -32,10 +34,10 @@ function Leaderboard() {
     ];
 
     useEffect(() => {
-        fetchLeaderboard(sortKey, isDescending);
-    }, [sortKey, isDescending]);
+        fetchLeaderboard(sortKey, isDescending, page);
+    }, [sortKey, isDescending, page]);
 
-    const fetchLeaderboard = (key, descending) => {
+    const fetchLeaderboard = (key, descending, page) => {
         const sortOrder = descending ? "true" : "false";
         const statType = statTypes.find((stat) => stat.name === key)?.id;
 
@@ -44,20 +46,33 @@ function Leaderboard() {
             return;
         }
 
-        fetch(`https://localhost:7073/api/Leaderboard?statType=${statType}&descending=${sortOrder}`)
+        fetch(`https://localhost:7073/api/Leaderboard?statType=${statType}&descending=${sortOrder}&page=${page}`)
             .then((response) => response.json())
             .then((data) => {
-                setLeaderboard(data);
+                setLeaderboard(data.leaderboard);
+                setTotalPages(data.totalPages);
             })
             .catch((error) => console.error("Error fetching leaderboard:", error));
     };
 
     const handleSort = (key) => {
         if (sortKey === key) {
-            setIsDescending(!isDescending); // Toggle sort direction if sorting by the same key
+            setIsDescending(!isDescending);
         } else {
-            setSortKey(key); // Change sort key and reset to descending
+            setSortKey(key);
             setIsDescending(true);
+        }
+    };
+
+    const handleNextPage = () => {
+        if (page < totalPages - 1) {
+            setPage(page + 1);
+        }
+    };
+
+    const handlePreviousPage = () => {
+        if (page > 0) {
+            setPage(page - 1);
         }
     };
 
@@ -92,27 +107,36 @@ function Leaderboard() {
                                 </Link>
                             </td>
                             <td>{formatSkyblockExp(player.stats.skyblockExp)}</td>
-                            <td>{player.stats.tamingExp}</td>
-                            <td>{player.stats.miningExp}</td>
-                            <td>{player.stats.foragingExp}</td>
-                            <td>{player.stats.enchantingExp}</td>
-                            <td>{player.stats.carpentryExp}</td>
-                            <td>{player.stats.farmingExp}</td>
-                            <td>{player.stats.combatExp}</td>
-                            <td>{player.stats.fishingExp}</td>
-                            <td>{player.stats.alchemyExp}</td>
-                            <td>{player.stats.runecraftingExp}</td>
-                            <td>{player.stats.socialExp}</td>
-                            <td>{player.stats.catacombsExp}</td>
-                            <td>{player.stats.healerExp}</td>
-                            <td>{player.stats.archerExp}</td>
-                            <td>{player.stats.tankExp}</td>
-                            <td>{player.stats.berserkerExp}</td>
-                            <td>{player.stats.mageExp}</td>
+                            <td>{player.stats.tamingExp.toLocaleString()}</td>
+                            <td>{player.stats.miningExp.toLocaleString()}</td>
+                            <td>{player.stats.foragingExp.toLocaleString()}</td>
+                            <td>{player.stats.enchantingExp.toLocaleString()}</td>
+                            <td>{player.stats.carpentryExp.toLocaleString()}</td>
+                            <td>{player.stats.farmingExp.toLocaleString()}</td>
+                            <td>{player.stats.combatExp.toLocaleString()}</td>
+                            <td>{player.stats.fishingExp.toLocaleString()}</td>
+                            <td>{player.stats.alchemyExp.toLocaleString()}</td>
+                            <td>{player.stats.runecraftingExp.toLocaleString()}</td>
+                            <td>{player.stats.socialExp.toLocaleString()}</td>
+                            <td>{player.stats.catacombsExp.toLocaleString()}</td>
+                            <td>{player.stats.healerExp.toLocaleString()}</td>
+                            <td>{player.stats.archerExp.toLocaleString()}</td>
+                            <td>{player.stats.tankExp.toLocaleString()}</td>
+                            <td>{player.stats.berserkerExp.toLocaleString()}</td>
+                            <td>{player.stats.mageExp.toLocaleString()}</td>
                         </tr>
                     ))}
                 </tbody>
             </Table>
+            <div className="d-flex justify-content-between mt-3">
+                <Button variant="primary" onClick={handlePreviousPage} disabled={page === 0}>
+                    Previous
+                </Button>
+                <span>Page {page + 1} of {totalPages}</span>
+                <Button variant="primary" onClick={handleNextPage} disabled={page === totalPages - 1}>
+                    Next
+                </Button>
+            </div>
         </Container>
     );
 }

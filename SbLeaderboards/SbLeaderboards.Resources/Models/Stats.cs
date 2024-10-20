@@ -1,4 +1,5 @@
 ﻿using SbLeaderboards.Resources.Models.HypixelApiResponseJson.V2_Skyblock_ProfileEndpoint;
+using System.Numerics;
 
 namespace SbLeaderboards.Resources.Models
 {
@@ -6,24 +7,24 @@ namespace SbLeaderboards.Resources.Models
 	{
 		public int ProfileId { get; set; }
 		public DateTime Timestamp { get; set; }
-		public int SkyblockExp { get; set; } = 0;
-		public int TamingExp { get; set; } = 0;
-		public int MiningExp { get; set; } = 0;
-		public int ForagingExp { get; set; } = 0;
-		public int EnchantingExp { get; set; } = 0;
-		public int CarpentryExp { get; set; } = 0;
-		public int FarmingExp { get; set; } = 0;
-		public int CombatExp { get; set; } = 0;
-		public int FishingExp { get; set; } = 0;
-		public int AlchemyExp { get; set; } = 0;
-		public int RunecraftingExp { get; set; } = 0;
-		public int SocialExp { get; set; } = 0;
-		public int CatacombsExp { get; set; } = 0;
-		public int HealerExp { get; set; } = 0;
-		public int ArcherExp { get; set; } = 0;
-		public int TankExp { get; set; } = 0;
-		public int BerserkerExp { get; set; } = 0;
-		public int MageExp { get; set; } = 0;
+		public long SkyblockExp { get; set; } = 0;
+		public long TamingExp { get; set; } = 0;
+		public long MiningExp { get; set; } = 0;
+		public long ForagingExp { get; set; } = 0;
+		public long EnchantingExp { get; set; } = 0;
+		public long CarpentryExp { get; set; } = 0;
+		public long FarmingExp { get; set; } = 0;
+		public long CombatExp { get; set; } = 0;
+		public long FishingExp { get; set; } = 0;
+		public long AlchemyExp { get; set; } = 0;
+		public long RunecraftingExp { get; set; } = 0;
+		public long SocialExp { get; set; } = 0;
+		public long CatacombsExp { get; set; } = 0;
+		public long HealerExp { get; set; } = 0;
+		public long ArcherExp { get; set; } = 0;
+		public long TankExp { get; set; } = 0;
+		public long BerserkerExp { get; set; } = 0;
+		public long MageExp { get; set; } = 0;
 
         public Stats() { }
 
@@ -36,32 +37,32 @@ namespace SbLeaderboards.Resources.Models
 
 			if (member.player_data != null && member.player_data.experience != null)
 			{
-				TamingExp = (int)member.player_data.experience.SKILL_TAMING;
-				MiningExp = (int)member.player_data.experience.SKILL_MINING;
-				ForagingExp = (int)member.player_data.experience.SKILL_FORAGING;
-				EnchantingExp = (int)member.player_data.experience.SKILL_ENCHANTING;
-				CarpentryExp = (int)member.player_data.experience.SKILL_CARPENTRY;
-				FarmingExp = (int)member.player_data.experience.SKILL_FARMING;
-				CombatExp = (int)member.player_data.experience.SKILL_COMBAT;
-				FishingExp = (int)member.player_data.experience.SKILL_FISHING;
-				AlchemyExp = (int)member.player_data.experience.SKILL_ALCHEMY;
-				RunecraftingExp = (int)member.player_data.experience.SKILL_RUNECRAFTING;
-				SocialExp = (int)member.player_data.experience.SKILL_SOCIAL;
+				TamingExp = (long)member.player_data.experience.SKILL_TAMING;
+				MiningExp = (long)member.player_data.experience.SKILL_MINING;
+				ForagingExp = (long)member.player_data.experience.SKILL_FORAGING;
+				EnchantingExp = (long)member.player_data.experience.SKILL_ENCHANTING;
+				CarpentryExp = (long)member.player_data.experience.SKILL_CARPENTRY;
+				FarmingExp = (long)member.player_data.experience.SKILL_FARMING;
+				CombatExp = (long)member.player_data.experience.SKILL_COMBAT;
+				FishingExp = (long)member.player_data.experience.SKILL_FISHING;
+				AlchemyExp = (long)member.player_data.experience.SKILL_ALCHEMY;
+				RunecraftingExp = (long)member.player_data.experience.SKILL_RUNECRAFTING;
+				SocialExp = (long)member.player_data.experience.SKILL_SOCIAL;
 			}
 
 			if (member.dungeons != null)
 			{
 				if (member.dungeons.dungeons_types != null && member.dungeons.dungeons_types.catacombs != null)
 				{
-					CatacombsExp = (int)member.dungeons.dungeons_types.catacombs.experience;
+					CatacombsExp = (long)member.dungeons.dungeons_types.catacombs.experience;
 				}
 				if (member.dungeons.player_classes != null)
 				{
-					if (member.dungeons.player_classes.healer != null) HealerExp = (int)member.dungeons.player_classes.healer.experience;
-					if (member.dungeons.player_classes.archer != null) ArcherExp = (int)member.dungeons.player_classes.archer.experience;
-					if (member.dungeons.player_classes.tank != null) TankExp = (int)member.dungeons.player_classes.tank.experience;
-					if (member.dungeons.player_classes.berserk != null) BerserkerExp = (int)member.dungeons.player_classes.berserk.experience;
-					if (member.dungeons.player_classes.mage != null) MageExp = (int)member.dungeons.player_classes.mage.experience;
+					if (member.dungeons.player_classes.healer != null) HealerExp = (long)member.dungeons.player_classes.healer.experience;
+					if (member.dungeons.player_classes.archer != null) ArcherExp = (long)member.dungeons.player_classes.archer.experience;
+					if (member.dungeons.player_classes.tank != null) TankExp = (long)member.dungeons.player_classes.tank.experience;
+					if (member.dungeons.player_classes.berserk != null) BerserkerExp = (long)member.dungeons.player_classes.berserk.experience;
+					if (member.dungeons.player_classes.mage != null) MageExp = (long)member.dungeons.player_classes.mage.experience;
 				}
 			}
 		}
@@ -72,32 +73,32 @@ namespace SbLeaderboards.Resources.Models
 
 			if (member.player_data != null && member.player_data.experience != null)
 			{
-				TamingExp = (int)member.player_data.experience.SKILL_TAMING;
-				MiningExp = (int)member.player_data.experience.SKILL_MINING;
-				ForagingExp = (int)member.player_data.experience.SKILL_FORAGING;
-				EnchantingExp = (int)member.player_data.experience.SKILL_ENCHANTING;
-				CarpentryExp = (int)member.player_data.experience.SKILL_CARPENTRY;
-				FarmingExp = (int)member.player_data.experience.SKILL_FARMING;
-				CombatExp = (int)member.player_data.experience.SKILL_COMBAT;
-				FishingExp = (int)member.player_data.experience.SKILL_FISHING;
-				AlchemyExp = (int)member.player_data.experience.SKILL_ALCHEMY;
-				RunecraftingExp = (int)member.player_data.experience.SKILL_RUNECRAFTING;
-				SocialExp = (int)member.player_data.experience.SKILL_SOCIAL;
+				TamingExp = (long)member.player_data.experience.SKILL_TAMING;
+				MiningExp = (long)member.player_data.experience.SKILL_MINING;
+				ForagingExp = (long)member.player_data.experience.SKILL_FORAGING;
+				EnchantingExp = (long)member.player_data.experience.SKILL_ENCHANTING;
+				CarpentryExp = (long)member.player_data.experience.SKILL_CARPENTRY;
+				FarmingExp = (long)member.player_data.experience.SKILL_FARMING;
+				CombatExp = (long)member.player_data.experience.SKILL_COMBAT;
+				FishingExp = (long)member.player_data.experience.SKILL_FISHING;
+				AlchemyExp = (long)member.player_data.experience.SKILL_ALCHEMY;
+				RunecraftingExp = (long)member.player_data.experience.SKILL_RUNECRAFTING;
+				SocialExp = (long)member.player_data.experience.SKILL_SOCIAL;
 			}
 			
 			if (member.dungeons != null)
 			{
 				if (member.dungeons.dungeons_types != null && member.dungeons.dungeons_types.catacombs != null)
 				{
-					CatacombsExp = (int)member.dungeons.dungeons_types.catacombs.experience;
+					CatacombsExp = (long)member.dungeons.dungeons_types.catacombs.experience;
 				}
 				if (member.dungeons.player_classes != null)
 				{
-					if (member.dungeons.player_classes.healer != null) HealerExp = (int)member.dungeons.player_classes.healer.experience;
-					if (member.dungeons.player_classes.archer != null) ArcherExp = (int)member.dungeons.player_classes.archer.experience;
-					if (member.dungeons.player_classes.tank != null) TankExp = (int)member.dungeons.player_classes.tank.experience;
-					if (member.dungeons.player_classes.berserk != null) BerserkerExp = (int)member.dungeons.player_classes.berserk.experience;
-					if (member.dungeons.player_classes.mage != null) MageExp = (int)member.dungeons.player_classes.mage.experience;
+					if (member.dungeons.player_classes.healer != null) HealerExp = (long)member.dungeons.player_classes.healer.experience;
+					if (member.dungeons.player_classes.archer != null) ArcherExp = (long)member.dungeons.player_classes.archer.experience;
+					if (member.dungeons.player_classes.tank != null) TankExp = (long)member.dungeons.player_classes.tank.experience;
+					if (member.dungeons.player_classes.berserk != null) BerserkerExp = (long)member.dungeons.player_classes.berserk.experience;
+					if (member.dungeons.player_classes.mage != null) MageExp = (long)member.dungeons.player_classes.mage.experience;
 				}
 			}
 		}

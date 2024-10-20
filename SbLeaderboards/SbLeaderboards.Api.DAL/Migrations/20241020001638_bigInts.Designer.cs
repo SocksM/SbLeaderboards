@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SbLeaderboards.Api.DAL.Context;
 
@@ -11,9 +12,11 @@ using SbLeaderboards.Api.DAL.Context;
 namespace SbLeaderboards.Api.DAL.Migrations
 {
     [DbContext(typeof(SbLeaderboardsContext))]
-    partial class SbLeaderboardsContextModelSnapshot : ModelSnapshot
+    [Migration("20241020001638_bigInts")]
+    partial class bigInts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

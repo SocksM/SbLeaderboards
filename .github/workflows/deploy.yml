@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2  # Checks out the repository code
+        uses: actions/checkout@v3  # Checks out the repository code
 
       - name: Setup Node
         uses: actions/setup-node@v2  # Sets up the specified Node version
@@ -47,7 +47,7 @@ jobs:
           path: ./dist  # Downloads the artifact to this directory
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3  # Publishes the downloaded artifact to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4  # Publishes the downloaded artifact to GitHub Pages
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token to authorize the deployment
           publish_dir: ./dist  # Directory to publish (should match the download path)

@@ -1,0 +1,53 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2  # Checks out the repository code
+
+      - name: Setup Node
+        uses: actions/setup-node@v1  # Sets up the specified Node version
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        working-directory: ./SbLeaderboards/sbleaderboards.web  # Path to the Vite + React frontend app
+        uses: bahmutov/npm-install@v1  # Installs dependencies in the specified directory
+
+      - name: Build project
+        working-directory: ./SbLeaderboards/sbleaderboards.web  # Path to the Vite + React frontend app
+        run: npm run build  # Runs the build command; assumes it’s set up in package.json
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2  # Saves the build files as an artifact
+        with:
+          name: production-files
+          path: ./SbLeaderboards/sbleaderboards.web/dist  # Adjust to the output folder of the build
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'  # Ensures this job only runs on the main branch
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2  # Downloads the artifact created in the build job
+        with:
+          name: production-files
+          path: ./dist  # Downloads the artifact to this directory
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3  # Publishes the downloaded artifact to GitHub Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token to authorize the deployment
+          publish_dir: ./dist  # Directory to publish (should match the download path)

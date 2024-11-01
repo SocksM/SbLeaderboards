@@ -15,9 +15,9 @@ jobs:
         uses: actions/checkout@v2  # Checks out the repository code
 
       - name: Setup Node
-        uses: actions/setup-node@v1  # Sets up the specified Node version
+        uses: actions/setup-node@v2  # Sets up the specified Node version
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Install dependencies
         working-directory: ./SbLeaderboards/sbleaderboards.web  # Path to the Vite + React frontend app

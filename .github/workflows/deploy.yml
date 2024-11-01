@@ -21,11 +21,11 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./SbLeaderboards/sbleaderboards.web  # Path to the Vite + React frontend app
-        uses: bahmutov/npm-install@v1  # Installs dependencies in the specified directory
+        run: npm install  # Directly runs npm install to install dependencies
 
       - name: Build project
         working-directory: ./SbLeaderboards/sbleaderboards.web  # Path to the Vite + React frontend app
-        run: npm run build  # Runs the build command; assumes it’s set up in package.json
+        run: npm run build  # Runs the build command
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2  # Saves the build files as an artifact

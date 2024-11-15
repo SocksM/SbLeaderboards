@@ -36,30 +36,31 @@ function Header() {
 
 
 	return (
-		<header className={`transition d-flex justify-content-between align-items-center p-3 ${isDarkMode ? "bg-dark text-light" : "bg-light text-dark"}`}>
+		<div className="text-light">hellow </div>
+		//<header className={`transition d-flex justify-content-between align-items-center p-3 ${isDarkMode ? "bg-dark text-light" : "bg-light text-dark"}`}>
 
-			<Link to={`/`} className="link-text">
-				<h2>Hypixel Skyblock Leaderboards</h2>
-			</Link>
+		//	<Link to={`/`} className="link-text">
+		//		<h2>Hypixel Skyblock Leaderboards</h2>
+		//	</Link>
 			
-			<Form inline onSubmit={handleSearch} className="d-flex">
-				<Form.Control
-					type="text"
-					placeholder="Search"
-					value={searchTerm}
-					onChange={(e) => setSearchTerm(e.target.value)} 
-					className="me-2"
-				/>
-				<Button type="submit" variant={isDarkMode ? "dark" : "light"}>Search</Button>
-			</Form>
-			<Form.Check
-				type="switch"
-				id="dark-mode-switch"
-				label="Night Mode"
-				checked={isDarkMode}
-				onChange={toggleDarkMode}
-			/>
-		</header>
+		//	<Form inline onSubmit={handleSearch} className="d-flex">
+		//		<Form.Control
+		//			type="text"
+		//			placeholder="Search"
+		//			value={searchTerm}
+		//			onChange={(e) => setSearchTerm(e.target.value)} 
+		//			className="me-2"
+		//		/>
+		//		<Button type="submit" variant={isDarkMode ? "dark" : "light"}>Search</Button>
+		//	</Form>
+		//	<Form.Check
+		//		type="switch"
+		//		id="dark-mode-switch"
+		//		label="Night Mode"
+		//		checked={isDarkMode}
+		//		onChange={toggleDarkMode}
+		//	/>
+		//</header>
 	);
 }
 

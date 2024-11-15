@@ -14,6 +14,7 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Leaderboard />} />
+                    <Route path="/SbLeaderboards" element={<Leaderboard />} />
                     <Route path="/Player/:playerId" element={<Playerpage />} /> 
                 </Routes>
             </CombinedProvider>

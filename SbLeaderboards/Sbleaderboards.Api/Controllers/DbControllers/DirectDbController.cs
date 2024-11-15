@@ -9,25 +9,25 @@ using System.Dynamic;
 
 namespace SbLeaderboards.Api.Controllers.DbControllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class DirectDbController<E> : ControllerBase where E : Entity
-    {
-        protected readonly IDirectDbService<E> _directDbService;
+	[Route("api/[controller]")]
+	[ApiController]
+	public class DirectDbController<E> : ControllerBase where E : Entity
+	{
+		protected readonly IDirectDbService<E> _directDbService;
 
-        public DirectDbController(IConfiguration configuration) : base()
-        {
-            _directDbService = new DirectDbService<E>(new DirectDbRepository<E>(new SbLeaderboardsContext(new AppConfiguration(configuration))));
-        }
+		public DirectDbController(IConfiguration configuration) : base()
+		{
+			_directDbService = new DirectDbService<E>(new DirectDbRepository<E>(new SbLeaderboardsContext(new AppConfiguration(configuration))));
+		}
 
-        [HttpGet]
-        virtual public IActionResult GetAll(bool includeChilderen = false, int page = 0)
-        {
-            try
-            {
-                List<E> entities = _directDbService.GetAll(includeChilderen);
+		[HttpGet]
+		virtual public IActionResult GetAll(bool includeChilderen = false, int page = 0)
+		{
+			try
+			{
+				List<E> entities = _directDbService.GetAll(includeChilderen);
 
-                if (entities.Count == 0) return NotFound();
+				if (entities.Count == 0) return NotFound();
 
 				int pageSize = 50;
 				int totalCount = entities.Count;
@@ -45,28 +45,28 @@ namespace SbLeaderboards.Api.Controllers.DbControllers
 				output.entities = paginatedEntities;
 
 				return Ok(output);
-            }
-            catch (Exception)
-            {
-                return Problem();
-            }
-        }
+			}
+			catch (Exception)
+			{
+				return Problem();
+			}
+		}
 
-        [HttpGet("{id}")]
-        virtual public IActionResult Get(int id, bool includeChilderen = true)
-        {
-            try
-            {
-                E entity = _directDbService.GetById(id, includeChilderen);
+		[HttpGet("{id}")]
+		virtual public IActionResult Get(int id, bool includeChilderen = true)
+		{
+			try
+			{
+				E entity = _directDbService.GetById(id, includeChilderen);
 
-                if (entity == null) return NotFound();
+				if (entity == null) return NotFound();
 
-                return Ok(entity);
-            }
-            catch (Exception)
-            {
-                return Problem();
-            }
-        }
-    }
+				return Ok(entity);
+			}
+			catch (Exception)
+			{
+				return Problem();
+			}
+		}
+	}
 }

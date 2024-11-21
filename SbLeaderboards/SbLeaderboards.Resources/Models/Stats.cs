@@ -52,9 +52,9 @@ namespace SbLeaderboards.Resources.Models
 
 			if (member.dungeons != null)
 			{
-				if (member.dungeons.dungeons_types != null && member.dungeons.dungeons_types.catacombs != null)
+				if (member.dungeons.dungeon_types != null && member.dungeons.dungeon_types.catacombs != null)
 				{
-					CatacombsExp = (long)member.dungeons.dungeons_types.catacombs.experience;
+					CatacombsExp = (long)member.dungeons.dungeon_types.catacombs.experience;
 				}
 				if (member.dungeons.player_classes != null)
 				{
@@ -88,9 +88,9 @@ namespace SbLeaderboards.Resources.Models
 			
 			if (member.dungeons != null)
 			{
-				if (member.dungeons.dungeons_types != null && member.dungeons.dungeons_types.catacombs != null)
+				if (member.dungeons.dungeon_types != null && member.dungeons.dungeon_types.catacombs != null)
 				{
-					CatacombsExp = (long)member.dungeons.dungeons_types.catacombs.experience;
+					CatacombsExp = (long)member.dungeons.dungeon_types.catacombs.experience;
 				}
 				if (member.dungeons.player_classes != null)
 				{

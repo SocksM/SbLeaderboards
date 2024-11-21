@@ -4,30 +4,28 @@ namespace SbLeaderboards.Api.BLL.Services
 {
     public class EnumConversionService
     {
-        static public ProfileType? ToProfileType(string input)
+        static public ProfileType ToProfileType(string input)
         {
 			if (input == null) return ProfileType.Regular;
 
             switch (input.ToLower())
             {
-                case null:
-                case "":
-                    return ProfileType.Regular;
                 case "ironman":
                     return ProfileType.Ironman;
                 case "bingo":
                     return ProfileType.Bingo;
                 case "island":
-                    return ProfileType.Stranded;
-                case "unkown":
-                default:
-                    return null;
-            }
-        }
+					return ProfileType.Stranded;
+				case null:
+				case "":
+				default:
+					return ProfileType.Regular;
+			}
+		}
 
-		static public ProfileCuteName? ToProfileCuteName(string input)
+		static public ProfileCuteName ToProfileCuteName(string input)
 		{
-			if (input == null) return null;
+			if (input == null) throw new InvalidOperationException($"Couldn't convert \"{input}\" to a ProfileCuteName");
 
 			switch (input.ToLower())
 			{
@@ -77,7 +75,7 @@ namespace SbLeaderboards.Api.BLL.Services
 				case "unkown":
 				case "":
 				default:
-					return null;
+					throw new InvalidOperationException($"Couldn't convert \"{input.ToLower()}\" to a ProfileCuteName");
 			}
 		}
 	}

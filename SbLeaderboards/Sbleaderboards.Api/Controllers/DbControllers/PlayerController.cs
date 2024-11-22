@@ -16,7 +16,7 @@ namespace SbLeaderboards.Api.Controllers.DbControllers
 
         public PlayerController(AppConfiguration appConfiguration, SbLeaderboardsContext sbLeaderboardsContext) : base(sbLeaderboardsContext)
         {
-            _playerService = (PlayerService)_directDbService;
+            _playerService = new PlayerService(new PlayerRepository(sbLeaderboardsContext), new MojangApiRepository(), new HypixelApiRepository(appConfiguration));
         }
 
         [HttpGet("{id}")]

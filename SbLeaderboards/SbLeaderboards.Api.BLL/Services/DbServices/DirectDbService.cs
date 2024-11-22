@@ -13,32 +13,32 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 			_repository = repository;
 		}
 
-		public void Create(E entity)
+		public virtual void Create(E entity)
 		{
 			_repository.Create(entity);
 		}
 
-		public void Delete(E entity)
+		public virtual void Delete(E entity)
 		{
 			_repository.Delete(entity);
 		}
 
-		public List<E> GetAll(bool includeChilderen = false)
+		public virtual List<E> GetAll(bool includeChilderen = false)
 		{
 			return _repository.GetAll(includeChilderen);
 		}
 
-		public E GetById(int id, bool includeChilderen = true)
+		public virtual E GetById(int id, bool includeChilderen = true)
 		{
 			return _repository.GetById(id, includeChilderen);
 		}
 
-		public List<E> GetWhere(Func<E, bool> where, bool includeChilderen = false)
+		public virtual List<E> GetWhere(Func<E, bool> where, bool includeChilderen = false)
 		{
 			return _repository.GetWhere(where, includeChilderen);
 		}
 
-		public void Update(E entity)
+		public virtual void Update(E entity)
 		{
 			_repository.Update(entity);
 		}

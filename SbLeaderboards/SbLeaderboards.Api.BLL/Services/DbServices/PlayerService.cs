@@ -41,7 +41,7 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 			return player;
 		}
 
-		public new List<Player> GetAll(bool includeChilderen = false)
+		public override List<Player> GetAll(bool includeChilderen = false)
 		{
 			List<Player> players = _playerRepository.GetAll(includeChilderen);
 			for (int i = 0; i < players.Count; i++)
@@ -58,7 +58,7 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 			return player;
 		}
 
-		public new Player GetById(int id, bool includeChilderen = true)
+		public override Player GetById(int id, bool includeChilderen = true)
 		{
 			Player player = _playerRepository.GetById(id, includeChilderen);
 			player = UpdateFullPlayer(player, includeChilderen);

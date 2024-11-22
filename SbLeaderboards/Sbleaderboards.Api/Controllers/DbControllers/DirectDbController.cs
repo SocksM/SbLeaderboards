@@ -13,7 +13,7 @@ namespace SbLeaderboards.Api.Controllers.DbControllers
 	[ApiController]
 	public class DirectDbController<E> : ControllerBase where E : Entity
 	{
-		protected readonly IDirectDbService<E> _directDbService;
+		protected readonly IDirectDbService<E> _directDbService; // maybe make it not read only so it can be replaced wiht a reference??? idk
 
 		public DirectDbController(SbLeaderboardsContext sbLeaderboardsContext) : base()
 		{

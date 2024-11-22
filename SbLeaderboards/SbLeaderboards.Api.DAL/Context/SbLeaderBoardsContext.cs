@@ -10,18 +10,6 @@ namespace SbLeaderboards.Api.DAL.Context
 		public DbSet<Profile> Profiles { get; set; }
 		public DbSet<Stats> Stats { get; set; }
 
-		private readonly string _connectionString;
-
-		public SbLeaderboardsContext(AppConfiguration configuration)
-		{
-			_connectionString = configuration.GetConnectionString();
-		}
-
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			optionsBuilder.UseSqlServer(_connectionString);
-		}
-
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Player>()

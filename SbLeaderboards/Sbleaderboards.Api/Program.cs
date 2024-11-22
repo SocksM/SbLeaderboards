@@ -1,5 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using SbLeaderboards.Api.DAL.Configuration;
+using SbLeaderboards.Api.DAL.Context;
 
 namespace SbLeaderboards.Api
 {
@@ -42,6 +44,17 @@ namespace SbLeaderboards.Api
 							.AllowAnyHeader();
 					});
 			});
+
+			if (builder.Environment.IsDevelopment())
+			{
+				builder.Services.AddDbContext<SbLeaderboardsContext>(options =>
+					options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
+			}
+			else
+			{
+				builder.Services.AddDbContext<SbLeaderboardsContext>(options =>
+					options.UseMySql(builder.Configuration.GetConnectionString("ProductionConnection"), ServerVersion.Parse("10.11.8-MariaDB")));
+			}
 
 			var app = builder.Build();
 

@@ -22,7 +22,6 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        working-directory: \SbLeaderboards.sln
         run: dotnet build --configuration Release
 
       - name: dotnet publish

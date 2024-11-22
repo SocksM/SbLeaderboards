@@ -3,27 +3,24 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SbLeaderboards.Api.DAL.Context;
 
 #nullable disable
 
-namespace SbLeaderboards.Api.DAL.Migrations
+namespace SbLeaderboards.Api.DAL.Migrations.MySqlMigrations
 {
     [DbContext(typeof(SbLeaderboardsContext))]
-    [Migration("20241003210239_Profile.Type_to_Profile.Cutename")]
-    partial class ProfileType_to_ProfileCutename
+    partial class SbLeaderboardsContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+                .HasAnnotation("ProductVersion", "8.0.11")
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
             modelBuilder.Entity("SbLeaderboards.Resources.Models.Player", b =>
                 {
@@ -31,17 +28,20 @@ namespace SbLeaderboards.Api.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("LastNameCheck")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("LastStatUpdate")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid>("McUuid")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -54,7 +54,7 @@ namespace SbLeaderboards.Api.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("CuteName")
                         .HasColumnType("int");
@@ -63,7 +63,10 @@ namespace SbLeaderboards.Api.DAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<Guid>("ProfileId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -78,67 +81,67 @@ namespace SbLeaderboards.Api.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AlchemyExp")
-                        .HasColumnType("int");
+                    b.Property<long>("AlchemyExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("ArcherExp")
-                        .HasColumnType("int");
+                    b.Property<long>("ArcherExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("BerserkerExp")
-                        .HasColumnType("int");
+                    b.Property<long>("BerserkerExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("CarpentryExp")
-                        .HasColumnType("int");
+                    b.Property<long>("CarpentryExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("CatacombsExp")
-                        .HasColumnType("int");
+                    b.Property<long>("CatacombsExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("CombatExp")
-                        .HasColumnType("int");
+                    b.Property<long>("CombatExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("EnchantingExp")
-                        .HasColumnType("int");
+                    b.Property<long>("EnchantingExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("FarmingExp")
-                        .HasColumnType("int");
+                    b.Property<long>("FarmingExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("FishingExp")
-                        .HasColumnType("int");
+                    b.Property<long>("FishingExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("ForagingExp")
-                        .HasColumnType("int");
+                    b.Property<long>("ForagingExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("HealerExp")
-                        .HasColumnType("int");
+                    b.Property<long>("HealerExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("MageExp")
-                        .HasColumnType("int");
+                    b.Property<long>("MageExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("MiningExp")
-                        .HasColumnType("int");
+                    b.Property<long>("MiningExp")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("ProfileId")
                         .HasColumnType("int");
 
-                    b.Property<int>("RunecraftingExp")
-                        .HasColumnType("int");
+                    b.Property<long>("RunecraftingExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("SkyblockExp")
-                        .HasColumnType("int");
+                    b.Property<long>("SkyblockExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("SocialExp")
-                        .HasColumnType("int");
+                    b.Property<long>("SocialExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("TamingExp")
-                        .HasColumnType("int");
+                    b.Property<long>("TamingExp")
+                        .HasColumnType("bigint");
 
-                    b.Property<int>("TankExp")
-                        .HasColumnType("int");
+                    b.Property<long>("TankExp")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("Timestamp")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 

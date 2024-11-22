@@ -48,12 +48,12 @@ namespace SbLeaderboards.Api
 			if (builder.Environment.IsDevelopment())
 			{
 				builder.Services.AddDbContext<SbLeaderboardsContext>(options =>
-					options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
+					options.UseMySql(builder.Configuration.GetConnectionString("DevConnection"), ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("ProductionConnection"))));
 			}
 			else
 			{
 				builder.Services.AddDbContext<SbLeaderboardsContext>(options =>
-					options.UseMySql(builder.Configuration.GetConnectionString("ProductionConnection"), ServerVersion.Parse("10.11.8-MariaDB")));
+					options.UseMySql(builder.Configuration.GetConnectionString("ProductionConnection"), ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("ProductionConnection"))));
 			}
 
 			var app = builder.Build();
@@ -69,6 +69,10 @@ namespace SbLeaderboards.Api
 			}
 			else
 			{
+#warning remove swagger when im done with cicd testing
+				app.UseSwagger();
+				app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SbLeaderboards.Api v1"));
+
 				// Configure CORS
 				app.UseCors("Production");
 			}

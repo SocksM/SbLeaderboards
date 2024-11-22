@@ -1,11 +1,9 @@
-﻿using SbLeaderboards.Resources.Interfaces.IApiRepository;
+﻿using SbLeaderboards.Resources.Exceptions;
+using SbLeaderboards.Resources.Interfaces.IApiRepository;
 using SbLeaderboards.Resources.Interfaces.IRepository;
 using SbLeaderboards.Resources.Models;
 using SbLeaderboards.Resources.Models.HypixelApiResponseJson.V2_Skyblock_ProfileEndpoint;
-using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using System.Numerics;
-using System.Reflection.Metadata.Ecma335;
 
 namespace SbLeaderboards.Api.BLL.Services.DbServices
 {
@@ -114,42 +112,48 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 
 			if (DateTime.Now - player.LastStatUpdate > requiredWait)
 			{ // add resetting the datetime
-				List<profile> profiles = _hypixelApiService.GetProfilesByMcUuid(player.McUuid);
-				foreach (profile profile in profiles)
-				{
-					foreach (KeyValuePair<string, member> memberKeyValue in profile.members)
-					{
-#warning could still add saving for other members retrieved here
-						if (Guid.TryParse(memberKeyValue.Key, out Guid memberGuid) && memberGuid == player.McUuid)
-						{
-							Profile? dbProfile = player.Profiles.Where(p => Guid.Parse(profile.profile_id) == p.ProfileId).FirstOrDefault();
-							if (dbProfile != null)
-							{
-								dbProfile.Stats.Add(new Stats(dbProfile.Id, memberKeyValue.Value, DateTime.Now));
-							}
-							else
-							{
-								Profile newProfile = new Profile
-								{
-									PlayerId = player.Id,
-									Type = (Resources.Enums.ProfileType)EnumConversionService.ToProfileType(profile.game_mode),
-									CuteName = (Resources.Enums.ProfileCuteName)EnumConversionService.ToProfileCuteName(profile.cute_name),
-									ProfileId = Guid.Parse(profile.profile_id),
-									Stats = new List<Stats> {
-									new Stats(memberKeyValue.Value)
-									}
 
-								};
-								player.Profiles.Add(newProfile);
+				try
+				{
+					List<profile> profiles = _hypixelApiService.GetProfilesByMcUuid(player.McUuid);
+					foreach (profile profile in profiles)
+					{
+						foreach (KeyValuePair<string, member> memberKeyValue in profile.members)
+						{
+#warning could still add saving for other members retrieved here
+							if (Guid.TryParse(memberKeyValue.Key, out Guid memberGuid) && memberGuid == player.McUuid)
+							{
+								Profile? dbProfile = player.Profiles.Where(p => Guid.Parse(profile.profile_id) == p.ProfileId).FirstOrDefault();
+								if (dbProfile != null)
+								{
+									dbProfile.Stats.Add(new Stats(dbProfile.Id, memberKeyValue.Value, DateTime.Now));
+								}
+								else
+								{
+									Profile newProfile = new Profile
+									{
+										PlayerId = player.Id,
+										Type = EnumConversionService.ToProfileType(profile.game_mode),
+										CuteName = EnumConversionService.ToProfileCuteName(profile.cute_name),
+										ProfileId = Guid.Parse(profile.profile_id),
+										Stats = new List<Stats> {
+											new Stats(memberKeyValue.Value)
+										}
+									};
+									player.Profiles.Add(newProfile);
+								}
 							}
 						}
 					}
+					player.LastStatUpdate = DateTime.Now;
+					Update(player);
+					return new KeyValuePair<bool, Player>(true, player);
 				}
-				player.LastStatUpdate = DateTime.Now;
-				Update(player);
-				return new KeyValuePair<bool, Player>(true, player);
+				catch (ApiException ex)
+				{
+#warning add logging for exception
+				}
 			}
-
 			return new KeyValuePair<bool, Player>(false, player);
 		}
 	}

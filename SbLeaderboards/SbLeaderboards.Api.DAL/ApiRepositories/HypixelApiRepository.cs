@@ -6,15 +6,15 @@ using SbLeaderboards.Resources.Models.HypixelApiResponseJson.V2_Skyblock_Profile
 
 namespace SbLeaderboards.Api.DAL.ApiRepositories
 {
-    public class HypixelApiRepository : ApiRepository, IHypixelApiRepository
+	public class HypixelApiRepository : ApiRepository, IHypixelApiRepository
 	{
 		public readonly string _apiBaseUrl = "https://api.hypixel.net/v2/skyblock";
 		private readonly string _hypixelApiKey = string.Empty;
 
-        public HypixelApiRepository(AppConfiguration appConfiguration)
-        {
-            _hypixelApiKey = appConfiguration.GetApiKey("Hypixel");
-        }
+		public HypixelApiRepository(AppConfiguration appConfiguration)
+		{
+			_hypixelApiKey = appConfiguration.GetApiKey("Hypixel");
+		}
 
 		public async Task<profile> GetProfileByProfileUuid(Guid profileUuid)
 		{

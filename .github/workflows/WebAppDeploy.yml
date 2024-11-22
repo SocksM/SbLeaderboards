@@ -1,9 +1,9 @@
-name: Deploy WebApp (frontend)
+name: Deploy React App (frontend)
 
 on:
   push:
     branches:
-      - main  # Trigger on pushes to the main branch
+      - main
 
 jobs:
   build:
@@ -12,42 +12,38 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3  # Checks out the repository code
+        uses: actions/checkout@v3
 
       - name: Setup Node
-        uses: actions/setup-node@v2  # Sets up the specified Node version
-        with:
-          node-version: 20
+        uses: actions/setup-node@v3
 
       - name: Install dependencies
-        working-directory: ./SbLeaderboards/sbleaderboards.web  # Path to the Vite + React frontend app
-        run: npm install  # Directly runs npm install to install dependencies
+        uses: bahmutov/npm-install@v1
 
       - name: Build project
-        working-directory: ./SbLeaderboards/sbleaderboards.web  # Path to the Vite + React frontend app
-        run: npm run build  # Runs the build command
+        run: npm run build
 
       - name: Upload production-ready build files
-        uses: actions/upload-artifact@v4  # Saves the build files as an artifact
+        uses: actions/upload-artifact@v3
         with:
           name: production-files
-          path: ./SbLeaderboards/sbleaderboards.web/dist  # Adjust to the output folder of the build
+          path: ./dist
 
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'  # Ensures this job only runs on the main branch
+    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v4  # Downloads the artifact created in the build job
+        uses: actions/download-artifact@v3
         with:
           name: production-files
-          path: ./dist  # Downloads the artifact to this directory
+          path: ./dist
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4  # Publishes the downloaded artifact to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token to authorize the deployment
-          publish_dir: ./dist  # Directory to publish (should match the download path)
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

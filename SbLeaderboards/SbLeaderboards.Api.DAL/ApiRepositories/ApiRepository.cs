@@ -1,12 +1,13 @@
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
+using SbLeaderboards.Resources.Exceptions;
 using SbLeaderboards.Resources.Interfaces.IApiRepository;
 
 namespace SbLeaderboards.Api.DAL.ApiRepositories
 {
 	public class ApiRepository : IApiRepository
 	{
-		protected async Task<string> Get(string apiUrl)
+		public async Task<string> Get(string apiUrl)
 		{
 			using (HttpClient client = new HttpClient())
 			{
@@ -21,15 +22,11 @@ namespace SbLeaderboards.Api.DAL.ApiRepositories
 					}
 					catch (JsonReaderException ex)
 					{
-						// Log or inspect the invalid JSON content
 						throw new Exception($"Invalid JSON response: {content}", ex);
 					}
 				}
-
-				throw new Exception(message: $"Failed to retrieve data. Status code: {response.StatusCode}, Response content: {content}");
+				throw new ApiException(message: $"Failed to retrieve data. Status code: {response.StatusCode}, Response content: {content}", response.StatusCode, content);
 			}
 		}
-
-		Task<string> IApiRepository.Get(string apiUrl) => Get(apiUrl);
 	}
 }

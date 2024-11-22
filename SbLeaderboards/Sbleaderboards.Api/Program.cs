@@ -57,8 +57,7 @@ namespace SbLeaderboards.Api
 			else
 			{
 				// Configure CORS
-#warning Didn't setup CORS yet for deployment
-				app.UseCors();
+				app.UseCors("Production");
 			}
 
 			app.UseHttpsRedirection();

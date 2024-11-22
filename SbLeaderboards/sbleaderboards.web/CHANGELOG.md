@@ -5,8 +5,8 @@ The following tools were used to generate this project:
 
 The following steps were used to generate this project:
 - Create react project with create-vite: `npm init --yes vite@latest sbleaderboards.web -- --template=react`.
-- Updating vite.config.js with port.
 - Create project file (`sbleaderboards.web.esproj`).
 - Create `launch.json` to enable debugging.
+- Create `nuget.config` to specify location of the JavaScript Project System SDK (which is used in the first line in `sbleaderboards.web.esproj`).
 - Add project to solution.
 - Write this file.

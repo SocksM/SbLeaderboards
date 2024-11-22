@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SbLeaderboards.Resources", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SbLeaderboards.Tests", "SbLeaderboards.Tests\SbLeaderboards.Tests.csproj", "{44AF1D28-0983-48AD-8729-5C9F07577A04}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "sbleaderboards.web", "SbLeaderboards.Web\sbleaderboards.web.esproj", "{CFE8837D-952D-4726-8902-5EB479A49095}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "sbleaderboards-web", "SbLeaderboards.Web\sbleaderboards-web.esproj", "{CFE8837D-952D-4726-8902-5EB479A49095}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

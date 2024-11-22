@@ -38,8 +38,8 @@ namespace SbLeaderboards.Api
 					policy =>
 					{
 						policy.AllowAnyOrigin()
-						.WithMethods("GET")
-						.AllowAnyHeader();
+							.WithMethods("GET")
+							.AllowAnyHeader();
 					});
 			});
 

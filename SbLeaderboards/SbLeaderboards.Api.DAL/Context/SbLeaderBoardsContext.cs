@@ -11,7 +11,6 @@ namespace SbLeaderboards.Api.DAL.Context
 
 		public SbLeaderboardsContext(DbContextOptions<SbLeaderboardsContext> options) : base(options)
 		{
-
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)

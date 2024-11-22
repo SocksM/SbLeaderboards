@@ -11,10 +11,11 @@ namespace SbLeaderboards.Api.DAL.Configuration
 			_configuration = configuration;
 		}
 
-		public string GetConnectionString()
+		public string GetDeploymentKey()
 		{
-			return _configuration.GetConnectionString("DevConnection");
+			return _configuration.GetConnectionString($"ProductionConnection");
 		}
+
 		public string GetApiKey(string type)
 		{
 			return _configuration.GetConnectionString($"{type}ApiKey");

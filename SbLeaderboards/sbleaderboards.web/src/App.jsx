@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import "react";
 import "./styles.css";
 import CombinedProvider from "./Provider/CombinedProvider";
@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
     return (
-        <Router>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
             <CombinedProvider>
                 <Header />
                 <Routes>
@@ -18,7 +18,7 @@ function App() {
                     <Route path="/Player/:playerId" element={<Playerpage />} /> 
                 </Routes>
             </CombinedProvider>
-        </Router>
+        </BrowserRouter>
     );
 }
 

@@ -28,7 +28,7 @@ namespace SbLeaderboards.Api.Controllers
 
 				if (guid.Equals(Guid.Empty)) return NotFound();
 
-				return Ok(guid + _configuration.GetDeploymentKey());
+				return Ok(guid);
 			}
 			catch (Exception)
 			{

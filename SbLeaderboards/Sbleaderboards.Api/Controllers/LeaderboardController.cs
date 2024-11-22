@@ -15,11 +15,8 @@ namespace SbLeaderboards.Api.Controllers
     {
         private readonly LeaderboardService _leaderboardService;
 
-        //private readonly AppConfiguration _appConfiguration;
-
         public LeaderboardController(AppConfiguration appConfiguration, SbLeaderboardsContext sbLeaderboardsContext) : base()
         {
-            //_appConfiguration = appConfiguration;
             _leaderboardService = new LeaderboardService(new PlayerRepository(sbLeaderboardsContext), new ProfileRepository(sbLeaderboardsContext), new MojangApiRepository(), new HypixelApiRepository(appConfiguration));
         }
 
@@ -52,7 +49,6 @@ namespace SbLeaderboards.Api.Controllers
             catch (Exception ex)
             {
                 return Problem();
-                //return Ok(ex.Message +"::::::::::"+ _appConfiguration.GetApiKey("Hypixel") + "::::::::::" + _appConfiguration.GetDeploymentKey());
             }
         }
     }

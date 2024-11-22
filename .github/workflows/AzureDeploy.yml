@@ -22,7 +22,7 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        working-directory: .\SbLeaderboards\SbLeaderboards.sln
+        working-directory: SbLeaderboards\SbLeaderboards.sln
         run: dotnet build --configuration Release
 
       - name: dotnet publish
@@ -54,4 +54,4 @@ jobs:
           app-name: 'SbLeaderboards'
           slot-name: 'production'
           package: .
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_1234 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2CDD8EF979EF4DFEAD1F9E636716510F }} 

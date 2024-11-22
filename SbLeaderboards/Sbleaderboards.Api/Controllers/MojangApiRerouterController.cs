@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using SbLeaderboards.Api.BLL.Services;
 using SbLeaderboards.Api.BLL.Services.DbServices;
 using SbLeaderboards.Api.DAL.ApiRepositories;
+using SbLeaderboards.Api.DAL.Configuration;
 using SbLeaderboards.Resources.Models;
 
 namespace SbLeaderboards.Api.Controllers
@@ -12,7 +13,8 @@ namespace SbLeaderboards.Api.Controllers
 	public class MojangApiRerouterController : ControllerBase
 	{
 		private readonly MojangApiService _mojangApiService;
-        public MojangApiRerouterController(IConfiguration configuration)
+		private readonly AppConfiguration _configuration;
+        public MojangApiRerouterController(AppConfiguration appConfiguration)
         {
 			_mojangApiService = new MojangApiService(new MojangApiRepository());
         }
@@ -26,7 +28,7 @@ namespace SbLeaderboards.Api.Controllers
 
 				if (guid.Equals(Guid.Empty)) return NotFound();
 
-				return Ok(guid);
+				return Ok(guid + _configuration.GetDeploymentKey());
 			}
 			catch (Exception)
 			{

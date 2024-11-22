@@ -46,9 +46,9 @@ namespace SbLeaderboards.Api.Controllers
 
                 return Ok(output);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return Problem();
+                return Problem(ex.Message);
             }
         }
     }

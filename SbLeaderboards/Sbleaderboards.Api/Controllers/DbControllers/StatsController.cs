@@ -11,11 +11,8 @@ namespace SbLeaderboards.Api.Controllers.DbControllers
     [ApiController]
     public class StatsController : DirectDbController<Stats>
     {
-        private readonly StatsService _statsService;
-
-        public StatsController(IConfiguration configuration) : base(configuration)
+        public StatsController(SbLeaderboardsContext sbLeaderboardsContext) : base(sbLeaderboardsContext)
         {
-            _statsService = new StatsService(new StatsRepository(new SbLeaderboardsContext(new AppConfiguration(configuration))));
         }
     }
 }

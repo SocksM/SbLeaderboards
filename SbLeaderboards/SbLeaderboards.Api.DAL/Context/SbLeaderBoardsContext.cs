@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SbLeaderboards.Api.DAL.Configuration;
 using SbLeaderboards.Resources.Models;
 
 namespace SbLeaderboards.Api.DAL.Context
@@ -9,6 +8,11 @@ namespace SbLeaderboards.Api.DAL.Context
 		public DbSet<Player> Players { get; set; }
 		public DbSet<Profile> Profiles { get; set; }
 		public DbSet<Stats> Stats { get; set; }
+
+		public SbLeaderboardsContext(DbContextOptions<SbLeaderboardsContext> options) : base(options)
+		{
+
+		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

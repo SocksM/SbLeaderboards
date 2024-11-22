@@ -15,9 +15,9 @@ namespace SbLeaderboards.Api.Controllers.DbControllers
 	{
 		protected readonly IDirectDbService<E> _directDbService;
 
-		public DirectDbController(IConfiguration configuration) : base()
+		public DirectDbController(SbLeaderboardsContext sbLeaderboardsContext) : base()
 		{
-			_directDbService = new DirectDbService<E>(new DirectDbRepository<E>(new SbLeaderboardsContext(new AppConfiguration(configuration))));
+			_directDbService = new DirectDbService<E>(new DirectDbRepository<E>(sbLeaderboardsContext));
 		}
 
 		[HttpGet]

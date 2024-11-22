@@ -11,12 +11,8 @@ namespace SbLeaderboards.Api.Controllers.DbControllers
     [ApiController]
     public class ProfileController : DirectDbController<Profile>
     {
-        private readonly ProfileService _profileService;
-
-        public ProfileController(IConfiguration configuration) : base(configuration)
+        public ProfileController(SbLeaderboardsContext sbLeaderboardsContext) : base(sbLeaderboardsContext)
         {
-            _profileService = new ProfileService(new ProfileRepository(new SbLeaderboardsContext(new AppConfiguration(configuration))));
-
         }
     }
 }

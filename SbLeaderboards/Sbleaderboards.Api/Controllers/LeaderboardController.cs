@@ -15,11 +15,9 @@ namespace SbLeaderboards.Api.Controllers
     {
         protected readonly LeaderboardService _leaderboardService;
 
-        public LeaderboardController(IConfiguration configuration) : base()
+        public LeaderboardController(AppConfiguration appConfiguration, SbLeaderboardsContext sbLeaderboardsContext) : base()
         {
-            AppConfiguration appConfiguration = new AppConfiguration(configuration);
-            SbLeaderboardsContext context = new SbLeaderboardsContext(appConfiguration);
-            _leaderboardService = new LeaderboardService(new PlayerRepository(context), new ProfileRepository(context), new MojangApiRepository(), new HypixelApiRepository(appConfiguration));
+            _leaderboardService = new LeaderboardService(new PlayerRepository(sbLeaderboardsContext), new ProfileRepository(sbLeaderboardsContext), new MojangApiRepository(), new HypixelApiRepository(appConfiguration));
         }
 
         [HttpGet]

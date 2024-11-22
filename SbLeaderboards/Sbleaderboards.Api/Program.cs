@@ -34,6 +34,13 @@ namespace SbLeaderboards.Api
 							  .AllowAnyMethod()
 							  .AllowAnyHeader();
 					});
+				options.AddPolicy("Production",
+					policy =>
+					{
+						policy.AllowAnyOrigin()
+						.WithMethods("GET")
+						.AllowAnyHeader();
+					});
 			});
 
 			var app = builder.Build();

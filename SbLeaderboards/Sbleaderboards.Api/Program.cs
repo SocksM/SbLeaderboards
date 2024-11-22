@@ -69,10 +69,6 @@ namespace SbLeaderboards.Api
 			}
 			else
 			{
-#warning remove swagger when im done with cicd testing
-				app.UseSwagger();
-				app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SbLeaderboards.Api v1"));
-
 				// Configure CORS
 				app.UseCors("Production");
 			}

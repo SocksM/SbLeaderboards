@@ -3,7 +3,7 @@ import { Table, Container, Button, Spinner } from "react-bootstrap";
 import { useNightMode } from "../Provider/NightModeContext";
 import LeaderboardTableHeader from "../Compoments/LeaderboardTableHeader";
 import { Link } from "react-router-dom";
-import axiosInstance from "../Compoments/axiosInstance";
+import axiosInstance from "../Utils/axiosInstance";
 
 function Leaderboard() {
 	const [leaderboard, setLeaderboard] = useState([]);

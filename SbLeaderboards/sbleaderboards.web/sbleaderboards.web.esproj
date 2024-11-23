@@ -12,7 +12,4 @@
     <None Remove=".github\**" />
     <TypeScriptConfiguration Remove=".github\**" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\Utils\" />
-  </ItemGroup>
 </Project>

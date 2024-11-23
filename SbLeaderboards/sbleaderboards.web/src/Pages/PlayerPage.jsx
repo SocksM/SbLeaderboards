@@ -22,11 +22,18 @@ function PlayerPage() {
 
     const fetchPlayerData = async () => {
         try {
-            let response = await axiosInstance.get(`/Player/Mc${playerId}?includeChilderen=true`);
-            if (response.status === 404) {
-                response = await axiosInstance.get(`/Player/StartTracking/${playerId}`);
+            let response;
+            try {
+                response = await axiosInstance.get(`/Player/Mc${playerId}?includeChilderen=true`);
+            } catch (error) {
+                if (error.response && error.response.status === 404) {
+                    console.log("Player not found, starting tracking...");
+                    response = await axiosInstance.get(`/Player/StartTracking/${playerId}`);
+                } else {
+                    throw error; // Re-throw if it's not a 404
+                }
             }
-
+            console.log("Successfully fetched player data");
             processPlayerData(response.data);
         } catch (error) {
             console.error('Error fetching player data:', error);

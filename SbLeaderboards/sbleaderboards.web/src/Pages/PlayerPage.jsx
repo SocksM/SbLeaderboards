@@ -7,7 +7,7 @@ import { useProfileCuteNames } from '../Provider/ProfileCuteNameContext';
 import {
     LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
-import axiosInstance from '../Utils/axiosInstance';
+import axiosInstance from '../Compoments/axiosInstance';
 
 function PlayerPage() {
     const { playerId } = useParams();

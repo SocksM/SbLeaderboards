@@ -4,7 +4,7 @@ import { useNightMode } from "../Provider/NightModeContext";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import '../styles.css'
-import axiosInstance from "../Utils/axiosInstance";
+import axiosInstance from "./axiosInstance";
 
 function Header() {
 	const { isDarkMode, toggleDarkMode } = useNightMode();

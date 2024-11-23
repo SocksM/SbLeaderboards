@@ -29,11 +29,18 @@ namespace SbLeaderboards.Api
 
 			builder.Services.AddCors(options =>
 			{
+				options.AddPolicy("ANY",
+					policy =>
+					{
+						policy.AllowAnyOrigin()
+							.AllowAnyMethod()
+							.AllowAnyHeader();
+					});
 				options.AddPolicy("AllowLocal",
 					policy =>
 					{
 						policy.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
-							  .AllowAnyMethod()
+							  .WithMethods("GET")
 							  .AllowAnyHeader();
 					});
 				options.AddPolicy("Production",

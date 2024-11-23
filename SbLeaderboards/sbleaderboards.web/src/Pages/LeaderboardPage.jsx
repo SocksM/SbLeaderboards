@@ -3,6 +3,8 @@ import { Table, Container, Button } from "react-bootstrap";
 import { useNightMode } from "../Provider/NightModeContext";
 import LeaderboardTableHeader from "../Compoments/LeaderboardTableHeader"
 import { Link } from "react-router-dom";
+import axiosInstance from "../Utils/axiosInstance";
+
 
 function Leaderboard() {
     const [leaderboard, setLeaderboard] = useState([]);
@@ -37,7 +39,7 @@ function Leaderboard() {
         fetchLeaderboard(sortKey, isDescending, page);
     }, [sortKey, isDescending, page]);
 
-    const fetchLeaderboard = (key, descending, page) => {
+    const fetchLeaderboard = async (key, descending, page) => {
         const sortOrder = descending ? "true" : "false";
         const statType = statTypes.find((stat) => stat.name === key)?.id;
 
@@ -46,13 +48,15 @@ function Leaderboard() {
             return;
         }
 
-        fetch(`https://localhost:7073/api/Leaderboard?statType=${statType}&descending=${sortOrder}&page=${page}`)
-            .then((response) => response.json())
-            .then((data) => {
-                setLeaderboard(data.leaderboard);
-                setTotalPages(data.totalPages);
-            })
-            .catch((error) => console.error("Error fetching leaderboard:", error));
+        try {
+            const { data } = await axiosInstance.get(
+                `/Leaderboard?statType=${statType}&descending=${sortOrder}&page=${page}`
+            );
+            setLeaderboard(data.leaderboard);
+            setTotalPages(data.totalPages);
+        } catch (error) {
+            console.error("Error fetching leaderboard:", error);
+        }
     };
 
     const handleSort = (key) => {

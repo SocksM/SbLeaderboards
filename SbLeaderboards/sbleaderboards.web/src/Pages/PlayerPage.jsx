@@ -4,6 +4,7 @@ import { Table, Container, Spinner } from 'react-bootstrap';
 import { useNightMode } from '../Provider/NightModeContext';
 import { useProfileTypes } from '../Provider/ProfileTypeContext';
 import { useProfileCuteNames } from '../Provider/ProfileCuteNameContext';
+import axiosInstance from '../Utils/axiosInstance'
 
 function PlayerPage() {
     const { playerId } = useParams();
@@ -21,13 +22,12 @@ function PlayerPage() {
 
     const fetchPlayerData = async () => {
         try {
-            let response = await fetch(`https://localhost:7073/api/Player/Mc${playerId}?includeChilderen=true`);
+            let response = await axiosInstance.get(`/Player/Mc${playerId}?includeChilderen=true`);
             if (response.status === 404) {
-                response = await fetch(`https://localhost:7073/api/Player/StartTracking/${playerId}`);
+                response = await axiosInstance.get(`/Player/StartTracking/${playerId}`);
             }
-            if (!response.ok) throw new Error('Network response was not ok');
-            const data = await response.json();
-            processPlayerData(data);
+
+            processPlayerData(response.data);
         } catch (error) {
             console.error('Error fetching player data:', error);
         } finally {

@@ -13,7 +13,6 @@ namespace SbLeaderboards.Api.Controllers
 	public class MojangApiRerouterController : ControllerBase
 	{
 		private readonly MojangApiService _mojangApiService;
-		private readonly AppConfiguration _configuration;
         public MojangApiRerouterController(AppConfiguration appConfiguration)
         {
 			_mojangApiService = new MojangApiService(new MojangApiRepository());

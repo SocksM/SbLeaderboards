@@ -30,4 +30,9 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include=".Api\" />
+    <Folder Include=".Api.BLL\" />
+  </ItemGroup>
+
 </Project>

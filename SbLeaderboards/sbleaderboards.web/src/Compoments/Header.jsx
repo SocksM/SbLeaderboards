@@ -4,6 +4,7 @@ import { useNightMode } from "../Provider/NightModeContext";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import '../styles.css'
+import axiosInstance from "../utils/axiosInstance";
 
 function Header() {
 	const { isDarkMode, toggleDarkMode } = useNightMode();
@@ -18,14 +19,10 @@ function Header() {
 
 			if (!isUUID) {
 				try {
-					const response = await fetch(`https://localhost:7073/api/MojangApiRerouter/Player/McUuid/${searchTerm}`);
-					if (!response.ok) {
-						throw new Error('Player not found');
-					}
-					const data = await response.json();
+					const { data } = await axiosInstance.get(`/MojangApiRerouter/Player/McUuid/${searchTerm}`);
 					mcUuid = data;
 				} catch (error) {
-					console.error('Error fetching player UUID:', error);
+					console.error("Error fetching player UUID:", error);
 					alert(`Error: ${error.message}`);
 					return;
 				}

@@ -1,34 +1,34 @@
 import { useState } from "react"; 
 import { Form, Button } from "react-bootstrap"; 
 import { useNightMode } from "../Provider/NightModeContext";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import '../styles.css'
-import axiosInstance from "../utils/axiosInstance";
+//import axiosInstance from "../Utils/axiosInstance";
 
 function Header() {
 	const { isDarkMode, toggleDarkMode } = useNightMode();
 	const [searchTerm, setSearchTerm] = useState("");
-	const navigate = useNavigate(); 
+	//const navigate = useNavigate(); 
 
-	const handleSearch = async (e) => {
-		e.preventDefault();
-		if (searchTerm) {
-			const isUUID = /^[0-9a-f]{32}$/i.test(searchTerm);
-			let mcUuid = searchTerm;
+	//const handleSearch = async (e) => {
+	//	e.preventDefault();
+	//	if (searchTerm) {
+	//		const isUUID = /^[0-9a-f]{32}$/i.test(searchTerm);
+	//		let mcUuid = searchTerm;
 
-			if (!isUUID) {
-				try {
-					const { data } = await axiosInstance.get(`/MojangApiRerouter/Player/McUuid/${searchTerm}`);
-					mcUuid = data;
-				} catch (error) {
-					console.error("Error fetching player UUID:", error);
-					return;
-				}
-			}
-			navigate(`/player/${mcUuid}`);
-		}
-	};
+	//		if (!isUUID) {
+	//			try {
+	//				const { data } = await axiosInstance.get(`/MojangApiRerouter/Player/McUuid/${searchTerm}`);
+	//				mcUuid = data;
+	//			} catch (error) {
+	//				console.error("Error fetching player UUID:", error);
+	//				return;
+	//			}
+	//		}
+	//		navigate(`/player/${mcUuid}`);
+	//	}
+	//};
 
 
 	return (
@@ -38,7 +38,7 @@ function Header() {
 				<h2>Hypixel Skyblock Leaderboards</h2>
 			</Link>
 			
-			<Form inline onSubmit={handleSearch} className="d-flex">
+			<Form inline onSubmit={{/*handleSearch*/}} className="d-flex">
 				<Form.Control
 					type="text"
 					placeholder="Search"

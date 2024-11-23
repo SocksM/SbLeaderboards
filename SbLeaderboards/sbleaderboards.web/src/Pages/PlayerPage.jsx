@@ -4,7 +4,7 @@ import { Table, Container, Spinner } from 'react-bootstrap';
 import { useNightMode } from '../Provider/NightModeContext';
 import { useProfileTypes } from '../Provider/ProfileTypeContext';
 import { useProfileCuteNames } from '../Provider/ProfileCuteNameContext';
-import axiosInstance from '../Utils/axiosInstance'
+import axiosInstance from '../Compoments/axiosInstance'
 
 function PlayerPage() {
     const { playerId } = useParams();

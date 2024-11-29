@@ -19,7 +19,6 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      working-directory: SbLeaderboards
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore

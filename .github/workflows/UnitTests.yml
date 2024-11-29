@@ -6,8 +6,6 @@ name: .NET Unit Tests
 on:
   push:
     branches: [ "main", "dev" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
@@ -24,8 +22,6 @@ jobs:
       working-directory: SbLeaderboards
       run: dotnet restore
     - name: Build
-      working-directory: SbLeaderboards
       run: dotnet build --no-restore
     - name: Test
-      working-directory: SbLeaderboards
       run: dotnet test --no-build --verbosity normal

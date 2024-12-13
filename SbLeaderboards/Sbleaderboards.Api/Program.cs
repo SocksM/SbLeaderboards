@@ -52,16 +52,17 @@ namespace SbLeaderboards.Api
 					});
 			});
 
+			string connString;
 			if (builder.Environment.IsDevelopment())
 			{
-				builder.Services.AddDbContext<SbLeaderboardsContext>(options =>
-					options.UseMySql(builder.Configuration.GetConnectionString("DevConnection"), ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("ProductionConnection"))));
+				connString = builder.Configuration.GetConnectionString("DevConnection");
 			}
 			else
 			{
-				builder.Services.AddDbContext<SbLeaderboardsContext>(options =>
-					options.UseMySql(builder.Configuration.GetConnectionString("ProductionConnection"), ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("ProductionConnection"))));
+				connString = builder.Configuration.GetConnectionString("ProductionConnection");
 			}
+			builder.Services.AddDbContext<SbLeaderboardsContext>(options =>
+					options.UseMySql(connString, ServerVersion.AutoDetect(connString)));
 
 			var app = builder.Build();
 

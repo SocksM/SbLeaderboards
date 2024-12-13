@@ -108,13 +108,14 @@ namespace SbLeaderboards.Api.BLL.Services.DbServices
 
 		public KeyValuePair<bool, Player> UpdateStats(Player player)
 		{
-			TimeSpan requiredWait = TimeSpan.FromHours(0);
+			TimeSpan requiredWait = TimeSpan.FromHours(24);
 
 			if (DateTime.Now - player.LastStatUpdate > requiredWait)
 			{ // add resetting the datetime
 
 				try
 				{
+#warning try catch doesnt catch for some reason (possibly because of the async function?)
 					List<profile> profiles = _hypixelApiService.GetProfilesByMcUuid(player.McUuid);
 					foreach (profile profile in profiles)
 					{

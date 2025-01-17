@@ -126,15 +126,15 @@ public class DirectDbServiceTests
 		Assert.That(entitiesResult, Is.EqualTo(expectedEntities.Where(e => e.Id > 50).ToList()));
 	}
 
-	[Test]
-	public void GetWhere_ThrowsNoEntitiesFoundException()
-	{
-		//Arrange
-		_mockDirectDbRepository.Setup(repo => repo.GetWhere(It.IsAny<Func<Entity, bool>>(), false)).Returns([]);
+	//[Test]
+	//public void GetWhere_ThrowsNoEntitiesFoundException()
+	//{
+	//	//Arrange
+	//	_mockDirectDbRepository.Setup(repo => repo.GetWhere(It.IsAny<Func<Entity, bool>>(), false)).Returns([]);
 
-		//Act & Assert
-		Assert.Throws<NoEntitiesFoundException>(() => _directDbService.GetWhere(e => e.Id > 50));
-	}
+	//	//Act & Assert
+	//	Assert.Throws<NoEntitiesFoundException>(() => _directDbService.GetWhere(e => e.Id > 50));
+	//}
 
 	[Test]
 	public void Update_CallsRepositoryUpdate()

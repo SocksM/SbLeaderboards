@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using SbLeaderboards.Api.BLL.Services;
-using SbLeaderboards.Api.BLL.Services.DbServices;
 using SbLeaderboards.Api.DAL.ApiRepositories;
 using SbLeaderboards.Api.DAL.Configuration;
-using SbLeaderboards.Resources.Models;
 
 namespace SbLeaderboards.Api.Controllers
 {

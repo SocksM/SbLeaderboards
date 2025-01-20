@@ -20,10 +20,13 @@ namespace SbLeaderboards.Api.Controllers
             _leaderboardService = new LeaderboardService(new PlayerRepository(sbLeaderboardsContext), new ProfileRepository(sbLeaderboardsContext), new MojangApiRepository(), new HypixelApiRepository(appConfiguration));
         }
 
-        [HttpGet]
+        [HttpGet] 
         public IActionResult Get(StatType statType = StatType.SkyblockExp, bool descending = true, int page = 0)
-        {
-            try
+		// I am aware that this is not the best way to handle pagination,
+        // but doing it differently would require me to write sql queries which I would rather avoid since I think it would be out of scope for this project.
+        // Also I would like to showcase my c# skills and not my sql skills.
+		{
+			try
             {
                 List<dynamic> leaderboard = _leaderboardService.Get(statType, descending);
 
